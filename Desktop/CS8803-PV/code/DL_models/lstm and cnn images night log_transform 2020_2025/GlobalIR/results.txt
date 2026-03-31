@@ -1,0 +1,34 @@
+CNN-LSTM Results for GlobalIR (log1p on: MonoSi_Power, PolySi_Power, TFSi_a_Power, TFcigs_Power, GlobalIR, DiffuseIR, DirectIR)
+==================================================
+
+Epochs (Training RMSE, Validation RMSE) — scaled log1p target space:
+  Epoch   1: train_rmse=0.3019, val_rmse=0.3889
+  Epoch   2: train_rmse=0.2112, val_rmse=0.3936
+  Epoch   3: train_rmse=0.2017, val_rmse=0.3521
+  Epoch   4: train_rmse=0.1878, val_rmse=0.3415
+  Epoch   5: train_rmse=0.1875, val_rmse=0.3355
+  Epoch   6: train_rmse=0.1830, val_rmse=0.3054
+  Epoch   7: train_rmse=0.1807, val_rmse=0.3333
+  Epoch   8: train_rmse=0.1771, val_rmse=0.3415
+  Epoch   9: train_rmse=0.1676, val_rmse=0.3365
+  Epoch  10: train_rmse=0.1649, val_rmse=0.3306
+  Epoch  11: train_rmse=0.1593, val_rmse=0.3062
+  Epoch  12: train_rmse=0.1600, val_rmse=0.3135
+  Epoch  13: train_rmse=0.1587, val_rmse=0.2810
+  Epoch  14: train_rmse=0.1571, val_rmse=0.3152
+  Epoch  15: train_rmse=0.1573, val_rmse=0.2874
+  Epoch  16: train_rmse=0.1513, val_rmse=0.2627
+  Epoch  17: train_rmse=0.1504, val_rmse=0.2762
+  Epoch  18: train_rmse=0.1500, val_rmse=0.2714
+  Epoch  19: train_rmse=0.1473, val_rmse=0.2444
+  Epoch  20: train_rmse=0.1461, val_rmse=0.2602
+
+Test metrics (scaled log1p space, after StandardScaler on y):
+  RMSE:  0.2470
+  MAE:   0.1227
+  R²:    0.9442
+
+Test metrics (original physical units, expm1 after inverse scaler):
+  RMSE:  82.2462
+  MAE:   40.6656
+  R²:    0.8902
