@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aanchal Save | Aerospace Engineering & Robot Learning</title>
+  <meta
+    name="description"
+    content="Portfolio website for Aanchal Save, Aerospace Engineering student at Georgia Tech focused on robot learning, GNC, and real-world autonomy."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top">Aanchal Save</a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+      <nav class="site-nav">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-layout">
+        <div>
+          <p class="eyebrow">Georgia Tech Aerospace + Computer Science</p>
+          <h1>Robotics researcher building reliable autonomy from first-principles dynamics to learned control.</h1>
+          <p class="hero-copy">
+            Aerospace Engineering student at Georgia Tech focused on robotics research and real-world autonomy.
+            I've built learned control systems for NASA robotic manipulators, simulated
+            GNC algorithms at SpaceX, and currently research physics-informed policy learning and world-model RL.
+            Interested in how classical dynamics and modern learning methods combine to make robots work reliably outside the lab.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="./AanchalSaveResume2026.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
+            <a class="btn btn-secondary" href="./AanchalSaveResume2026.pdf" download>Download Resume</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/aanchal-save" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+        <aside class="profile-card">
+          <img src="./Profile Photo.jpg" alt="Portrait of Aanchal Save" class="profile-photo" />
+          <p class="profile-caption">Aanchal Save</p>
+          <p class="profile-sub">Robotics · Autonomy · Space Systems</p>
+        </aside>
+      </div>
+      <div class="quick-facts">
+        <article><span>Degree</span><strong>B.S. Aerospace Engineering</strong></article>
+        <article><span>School</span><strong>Georgia Tech</strong></article>
+        <article><span>Minor</span><strong>Computer Science</strong></article>
+        <article><span>GPA</span><strong>4.0 / 4.0</strong></article>
+      </div>
+      <div class="theme-tags">
+        <span>Robotics</span>
+        <span>Autonomy</span>
+        <span>Space Systems</span>
+        <span>GNC</span>
+        <span>Embodied AI</span>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <h2>About</h2>
+      <p>
+        I work on the boundary between robotics, guidance/navigation/control (GNC), and machine learning,
+        with a focus on robust real-world autonomy. My experience spans spacecraft constellation simulation,
+        kinematics learning for high-DOF manipulators, reinforcement learning world models, and satellite operations.
+      </p>
+      <p>
+        Across internships and research labs, I build software that is both principled and deployable:
+        from Orekit-based orbit navigation tools and physics simulators in C++/Python to ROS2 systems that combine
+        perception, planning, and language interfaces.
+      </p>
+    </section>
+
+    <section id="experience" class="section container">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <article class="card">
+          <img src="./spacex_logo.jpg" alt="SpaceX logo" />
+          <div>
+            <h3>SpaceX · GNC Engineering Intern</h3>
+            <p class="meta">Aug 2025 - Dec 2025 · Hawthorne, CA</p>
+            <ul>
+              <li>Designed and evaluated next-generation constellation architecture concepts and trades.</li>
+              <li>Built physics-based simulation and analysis pipelines in Python and C++.</li>
+              <li>Developed data visualization tooling with Matplotlib, Pandas, and Bokeh.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="./skyfallspace_logo.jpg" alt="Skyfall Space logo" />
+          <div>
+            <h3>Skyfall Space · Software Engineer (Part-time)</h3>
+            <p class="meta">May 2025 - Aug 2025</p>
+            <ul>
+              <li>Contributed to NASA-funded CubeSat startup for orbital debris mitigation.</li>
+              <li>Developed orbit and capture simulations plus debris propagation models.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="./amentumcorp_logo.jpg" alt="Amentum logo" />
+          <div>
+            <h3>Amentum @ NASA MSFC · Robotics and ML Intern</h3>
+            <p class="meta">May 2025 - Aug 2025 · Huntsville, AL</p>
+            <ul>
+              <li>Built deep learning architecture in PyTorch for forward and inverse kinematics on a 7-DOF arm.</li>
+              <li>Created a novel inverse kinematics solution accepted toward NASA New Technology Report patent process.</li>
+              <li>Integrated ROS2 edge systems with LLM + RAG control and perception modules for natural language interaction.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="./research_at_georgia_tech_logo.jpg" alt="Georgia Tech Research logo" />
+          <div>
+            <h3>Georgia Tech Research · Undergraduate Research Assistant</h3>
+            <p class="meta">Nov 2024 - Present · Atlanta, GA</p>
+            <ul>
+              <li>SSDL (GPDM Mission): navigation software for orbit propagation and thrust estimation using Orekit + Python.</li>
+              <li>CEREAL Lab: Bayesian ML for wing pressure prediction and LLM-assisted aerodynamics insight systems.</li>
+              <li>DREAM Lab: TD-MPC2 world-model RL and sim-to-real robustness benchmarks in Isaac Lab, MuJoCo, and MetaWorld.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="./aero_maker_space_logo.jpg" alt="Aero Maker Space logo" />
+          <div>
+            <h3>Aero Maker Space · Prototyping Mentor (Part-time)</h3>
+            <p class="meta">Jan 2025 - May 2025</p>
+            <ul>
+              <li>Mentored students through aerospace design and fabrication workflows.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="./georgia_tech_robojackets_logo.jpg" alt="RoboJackets logo" />
+          <div>
+            <h3>RoboJackets · Software and Mechanical Team</h3>
+            <p class="meta">Sep 2024 - May 2025</p>
+            <ul>
+              <li>Implemented autonomous rover navigation using ROS2 + C++ and LIDAR traversability mapping.</li>
+              <li>Designed and machined robot components with mills, lathes, and waterjet workflows.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="./VIP.jpg" alt="Georgia Tech VIP logo" />
+          <div>
+            <h3>Georgia Tech VIP · Active Safety Researcher</h3>
+            <p class="meta">Aug 2024 - Dec 2024</p>
+            <ul>
+              <li>Built autonomous perception and avoidance stack on F1-Tenth platform with stereo depth and YOLO.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="./nasa_logo.jpg" alt="NASA logo" />
+          <div>
+            <h3>NASA · Intern and Peer Mentor Roles</h3>
+            <p class="meta">May 2022 - Dec 2023 · Austin, TX</p>
+            <ul>
+              <li>Command and data handling for high-altitude balloon telemetry systems.</li>
+              <li>Remote sensing and lunar sensor experimentation in C++.</li>
+              <li>Peer mentor for atmospheric and eclipse ballooning studies presented at AGU 2023.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="research" class="section container">
+      <h2>Research Focus (Robotics + Autonomy)</h2>
+      <p>
+        My research sits at the intersection of classical aerospace dynamics and modern machine learning for autonomy.
+        I focus on methods that are both theoretically grounded and deployable in safety-critical environments.
+      </p>
+      <div class="grid-3">
+        <article class="mini-card">
+          <h3>Robot Learning + Control</h3>
+          <p>
+            Implemented and evaluated TD-MPC2 world-model RL for robust, data-efficient control.
+          </p>
+          <button class="detail-trigger" type="button" data-title="Robot Learning + Control" data-detail="Implemented and evaluated TD-MPC2 world-model reinforcement learning, combining learned latent dynamics with online planning for robust, data-efficient control. Benchmarked performance against PPO and PID-style baselines with focus on stability and sample efficiency.">Read research details</button>
+        </article>
+        <article class="mini-card">
+          <h3>Spacecraft GNC + Mission Ops</h3>
+          <p>
+            Built orbit propagation and thrust estimation software and supported mission operations.
+          </p>
+          <button class="detail-trigger" type="button" data-title="Spacecraft GNC + Mission Ops" data-detail="Built navigation software for orbit propagation and thrust estimation using Orekit + Python, and contributed to mission integration, cleanroom testing, and post-launch operations planning with NASA collaboration workflows.">Read research details</button>
+        </article>
+        <article class="mini-card">
+          <h3>Embodied AI Systems</h3>
+          <p>
+            Developed perception-control stacks with kinematics learning, ROS2, and language interfaces.
+          </p>
+          <button class="detail-trigger" type="button" data-title="Embodied AI Systems" data-detail="Developed perception + control pipelines spanning kinematics learning, YOLO-based perception, ROS2 integration, and language-enabled robotic interfaces for both manipulation and autonomous navigation tasks.">Read research details</button>
+        </article>
+      </div>
+      <div class="grid-2" style="margin-top: 0.95rem;">
+        <article class="mini-card">
+          <h3>DREAM Lab (Georgia Tech Europe)</h3>
+          <p>
+            Cross-domain world-model RL studies in Isaac Lab, MuJoCo, and MetaWorld.
+          </p>
+          <button class="detail-trigger" type="button" data-title="DREAM Lab (Georgia Tech Europe)" data-detail="Led cross-domain world-model RL experiments in Nvidia Isaac Lab, MuJoCo, and MetaWorld to evaluate scaling behavior and sim-to-real robustness for next-generation model-based autonomy in robotics navigation benchmarks.">Read research details</button>
+        </article>
+        <article class="mini-card">
+          <h3>CEREAL + SSDL + Dynamics & Controls Labs</h3>
+          <p>
+            Bayesian ML, F1-Tenth autonomy, and satellite operations software across GT labs.
+          </p>
+          <button class="detail-trigger" type="button" data-title="CEREAL + SSDL + Dynamics & Controls Labs" data-detail="Developed Bayesian ML frameworks for airfoil pressure prediction, LLM/RAG-assisted aerodynamics insight tools, F1-Tenth autonomous perception and avoidance with ROS2 + vision, and satellite operations software for GPDM mission workflows.">Read research details</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2>Selected Projects</h2>
+      <div class="grid-2">
+        <article class="mini-card">
+          <h3>Neural Inverse Kinematics for 7-DOF Manipulator</h3>
+          <p>Built a PyTorch architecture for forward/inverse kinematics with simulation data.</p>
+          <button class="detail-trigger" type="button" data-title="Neural Inverse Kinematics for 7-DOF Manipulator" data-detail="Developed a first-of-its-kind PyTorch architecture for forward and inverse kinematics using Gazebo + Simulink simulation data, enabling a more efficient replacement for traditional inverse kinematics approaches in robotic arm control.">View project details</button>
+        </article>
+        <article class="mini-card">
+          <h3>Constellation Trade Simulation Tools</h3>
+          <p>Created simulation environments and metric dashboards for constellation design.</p>
+          <button class="detail-trigger" type="button" data-title="Constellation Trade Simulation Tools" data-detail="Built C++ and Python simulation environments and metric dashboards to evaluate architecture trades and support constellation design decisions for GNC workflows.">View project details</button>
+        </article>
+        <article class="mini-card">
+          <h3>CubeSat Debris Mitigation Simulation</h3>
+          <p>Built orbit and capture simulations for active orbital debris mitigation.</p>
+          <button class="detail-trigger" type="button" data-title="CubeSat Debris Mitigation Simulation" data-detail="Developed orbit and capture simulations and debris propagation modeling for a NASA-funded CubeSat startup focused on orbital debris elimination.">View project details</button>
+        </article>
+        <article class="mini-card">
+          <h3>Autonomous Rover Traversability Mapping</h3>
+          <p>Developed LIDAR-driven traversability mapping and motion planning in ROS2 + C++.</p>
+          <button class="detail-trigger" type="button" data-title="Autonomous Rover Traversability Mapping" data-detail="Implemented autonomous rover navigation using ROS2 + C++, generating traversability maps from LIDAR data for real-time motion planning in competition environments.">View project details</button>
+        </article>
+        <article class="mini-card">
+          <h3>GRACE Data Visualization Dashboard</h3>
+          <p>
+            Built an interactive dashboard for GRACE satellite trend analysis.
+          </p>
+          <button class="detail-trigger" type="button" data-title="GRACE Data Visualization Dashboard" data-detail="Built an interactive dashboard to visualize GRACE satellite data and trends, improving exploratory analysis and making geophysical signal interpretation faster and more intuitive.">View project details</button>
+        </article>
+        <article class="mini-card">
+          <h3>Distracted Driving Prevention (OpenCV)</h3>
+          <p>Developed an OpenCV pipeline for near real-time driver attention monitoring.</p>
+          <button class="detail-trigger" type="button" data-title="Distracted Driving Prevention (OpenCV)" data-detail="Developed a computer-vision-driven application for monitoring driver attention and identifying distraction indicators in near real-time using OpenCV-based perception methods.">View project details</button>
+        </article>
+        <article class="mini-card">
+          <h3>CEREAL LLM Testing</h3>
+          <p>Evaluated LLM workflows for aerodynamics insight and research support.</p>
+          <button class="detail-trigger" type="button" data-title="CEREAL LLM Testing" data-detail="Prototyped and evaluated LLM-based workflows for aerodynamics and research support tasks, focusing on reliability, technical insight extraction, and domain-grounded responses.">View project details</button>
+        </article>
+        <article class="mini-card">
+          <h3>FTC Skystone Robotics Codebase</h3>
+          <p>Contributed to a robotics codebase in Java with systems-level debugging.</p>
+          <button class="detail-trigger" type="button" data-title="FTC Skystone Robotics Codebase" data-detail="Contributed to a competitive robotics software stack in Java, applying practical control logic, systems integration, and hardware-software debugging in competition contexts.">View project details</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications" class="section container">
+      <h2>Publications & Presentations</h2>
+      <p>
+        My publication record spans robotics, distributed intelligence, aerodynamics, and atmospheric sensing, with work presented
+        in IEEE, AIAA, and AGU venues.
+      </p>
+      <ul class="pub-list">
+        <li>
+          <strong>Save, A.</strong> Artificial Neural Networks for Solving Forward and Inverse Kinematics on a 7-DOF Robotic Manipulator.
+          <em>IEEE ICMRE 2026</em> (accepted for oral presentation and publication in IEEE Xplore).
+        </li>
+        <li>
+          <strong>Lowman, W., Save, A., Ho, D., et al.</strong> A Distributed Intelligence Architecture for Responsive Command Handling in Edge Robotics.
+          <em>AIAA ASCEND 2026</em> (accepted oral presentation and publication).
+        </li>
+        <li>
+          <strong>Lee, H., Save, A., Seshadri, P., et al.</strong> Large airfoil models.
+          <em>Computers and Fluids</em> (2025). <a href="https://doi.org/10.1016/j.compfluid.2025.106662" target="_blank" rel="noopener noreferrer">DOI link</a>
+        </li>
+        <li>
+          Exploring Atmospheric Effects During Solar Eclipses: High-Altitude Ballooning Data Collection & Analysis.
+          <em>American Geophysical Union (AGU) Fall Meeting 2023</em>.
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2>Skills</h2>
+      <p>Choose a category to explore the stack I use across robotics research and real-world autonomy projects.</p>
+      <div class="skills-explorer">
+        <div class="skills-tabs" role="tablist" aria-label="Skill categories">
+          <button class="skill-tab active" type="button" role="tab" aria-selected="true" data-skill-tab="software">Software</button>
+          <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="robotics">Robotics</button>
+          <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="ml">ML + Perception</button>
+          <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="simulation">Simulation</button>
+          <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="gnc">Aerospace + GNC</button>
+          <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="systems">Tools + Systems</button>
+          <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="certs">Certifications</button>
+        </div>
+
+        <article class="skill-panel active" role="tabpanel" data-skill-panel="software">
+          <h3>Programming & Software Engineering</h3>
+          <div class="chip-wrap">
+            <span class="chip">Python</span><span class="chip">C++</span><span class="chip">Java</span>
+            <span class="chip">MATLAB</span><span class="chip">JavaScript/TypeScript</span><span class="chip">SQL</span>
+            <span class="chip">OOP Design</span><span class="chip">Data Structures & Algorithms</span>
+            <span class="chip">Scalable Systems</span><span class="chip">Real-time Systems</span>
+          </div>
+        </article>
+
+        <article class="skill-panel" role="tabpanel" data-skill-panel="robotics" hidden>
+          <h3>Robotics, Autonomy & Control</h3>
+          <div class="chip-wrap">
+            <span class="chip">System Modeling</span><span class="chip">Dynamics & Kinematics</span><span class="chip">PID</span>
+            <span class="chip">MPC</span><span class="chip">MPPI</span><span class="chip">Kalman Filter</span>
+            <span class="chip">EKF</span><span class="chip">Path Planning</span><span class="chip">Autonomous Systems</span>
+          </div>
+        </article>
+
+        <article class="skill-panel" role="tabpanel" data-skill-panel="ml" hidden>
+          <h3>Machine Learning, AI & Perception</h3>
+          <div class="chip-wrap">
+            <span class="chip">Neural Networks</span><span class="chip">Supervised Learning</span><span class="chip">Reinforcement Learning</span>
+            <span class="chip">Computer Vision</span><span class="chip">Sensor Fusion</span>
+            <span class="chip">Learning-based Modeling</span><span class="chip">Decision-making</span>
+          </div>
+        </article>
+
+        <article class="skill-panel" role="tabpanel" data-skill-panel="simulation" hidden>
+          <h3>Simulation & Robotics Platforms</h3>
+          <div class="chip-wrap">
+            <span class="chip">Gazebo</span><span class="chip">Simulink</span><span class="chip">MuJoCo</span>
+            <span class="chip">Isaac Sim</span><span class="chip">Isaac Lab</span><span class="chip">OpenCV</span><span class="chip">PCL</span>
+          </div>
+        </article>
+
+        <article class="skill-panel" role="tabpanel" data-skill-panel="gnc" hidden>
+          <h3>Aerospace & GNC</h3>
+          <div class="chip-wrap">
+            <span class="chip">Attitude Determination & Control</span><span class="chip">Orbital Mechanics</span>
+            <span class="chip">Spacecraft Systems</span><span class="chip">Trajectory Modeling</span>
+          </div>
+        </article>
+
+        <article class="skill-panel" role="tabpanel" data-skill-panel="systems" hidden>
+          <h3>Tools & Systems</h3>
+          <div class="chip-wrap">
+            <span class="chip">ROS2</span><span class="chip">Git</span><span class="chip">Linux/Unix</span>
+            <span class="chip">Data Pipelines</span><span class="chip">System Integration</span>
+          </div>
+        </article>
+
+        <article class="skill-panel" role="tabpanel" data-skill-panel="certs" hidden>
+          <h3>Certifications</h3>
+          <div class="chip-wrap">
+            <span class="chip">Certified SolidWorks Associate</span><span class="chip">Java IT Specialist</span>
+            <span class="chip">Autodesk Inventor</span><span class="chip">Microsoft Office Specialist</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-wrap">
+      <p>
+        <strong>Aanchal Save</strong> · Austin, TX ·
+        <a href="mailto:asave7@gatech.edu">asave7@gatech.edu</a> ·
+        <a href="tel:+15127154783">(512) 715-4783</a>
+      </p>
+      <p>
+        <a href="https://www.linkedin.com/in/aanchal-save" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        ·
+        <a href="./AanchalSaveResume2026.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+      </p>
+    </div>
+  </footer>
+
+  <div class="detail-modal" id="detailModal" hidden>
+    <div class="detail-overlay" data-close-modal></div>
+    <article class="detail-dialog" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+      <button class="detail-close" type="button" data-close-modal aria-label="Close detail popup">Close</button>
+      <h3 id="detailTitle"></h3>
+      <p id="detailBody"></p>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
