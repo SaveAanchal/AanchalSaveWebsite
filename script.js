@@ -1,3 +1,4 @@
+// ── Mobile menu ────────────────────────────────────────────────
 const menuButton = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".site-nav");
 
@@ -15,6 +16,7 @@ if (menuButton && nav) {
   });
 }
 
+// ── Skills tabs ─────────────────────────────────────────────────
 const skillTabs = document.querySelectorAll(".skill-tab");
 const skillPanels = document.querySelectorAll(".skill-panel");
 
@@ -36,66 +38,84 @@ if (skillTabs.length && skillPanels.length) {
   });
 }
 
-const detailButtons = document.querySelectorAll(".detail-trigger");
-const detailModal = document.getElementById("detailModal");
-const detailTitle = document.getElementById("detailTitle");
-const detailBody = document.getElementById("detailBody");
-const closeModalButtons = document.querySelectorAll("[data-close-modal]");
+// ── Modal system ────────────────────────────────────────────────
+const detailModal  = document.getElementById("detailModal");
+const detailTitle  = document.getElementById("detailTitle");
+const detailBody   = document.getElementById("detailBody");
+const closeButtons = document.querySelectorAll("[data-close-modal]");
 
-if (detailButtons.length && detailModal && detailTitle && detailBody) {
-  detailButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      detailTitle.textContent = button.dataset.title || "Details";
-      detailBody.textContent = button.dataset.detail || "";
-      detailModal.hidden = false;
-      document.body.style.overflow = "hidden";
-    });
-  });
-
-  closeModalButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      detailModal.hidden = true;
-      document.body.style.overflow = "";
-    });
-  });
-
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !detailModal.hidden) {
-      detailModal.hidden = true;
-      document.body.style.overflow = "";
-    }
-  });
+function openModal(title, bodyHTML) {
+  if (!detailModal || !detailTitle || !detailBody) return;
+  detailTitle.textContent = title;
+  detailBody.innerHTML    = bodyHTML;
+  detailModal.hidden = false;
+  document.body.style.overflow = "hidden";
 }
 
-const revealTargets = document.querySelectorAll(".section, .card, .mini-card, .skills-explorer, .detail-trigger");
-revealTargets.forEach((target) => target.classList.add("reveal"));
+function closeModal() {
+  if (!detailModal) return;
+  detailModal.hidden = true;
+  document.body.style.overflow = "";
+}
+
+// Case study triggers (data-case-id)
+document.querySelectorAll(".case-trigger").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const caseId  = btn.dataset.caseId;
+    const caseEl  = caseId ? document.getElementById(caseId) : null;
+    const title   = caseEl ? (caseEl.dataset.title || "Case Study") : "Case Study";
+    const content = caseEl ? caseEl.innerHTML : "<p>Content not found.</p>";
+    openModal(title, content);
+  });
+});
+
+// Generic detail triggers (data-title + data-detail)
+document.querySelectorAll(".detail-trigger:not(.case-trigger)").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const title   = btn.dataset.title  || "Details";
+    const detail  = btn.dataset.detail || "";
+    openModal(title, `<p>${detail}</p>`);
+  });
+});
+
+// Close
+closeButtons.forEach((btn) => btn.addEventListener("click", closeModal));
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && detailModal && !detailModal.hidden) closeModal();
+});
+
+// ── Scroll reveal ───────────────────────────────────────────────
+const revealTargets = document.querySelectorAll(
+  ".section, .card, .mini-card, .skills-explorer, .system-card, .focus-card, .pub-item"
+);
+revealTargets.forEach((t) => t.classList.add("reveal"));
 
 if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(
+  const obs = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          revealObserver.unobserve(entry.target);
+          obs.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.14 }
+    { threshold: 0.1 }
   );
-  revealTargets.forEach((target) => revealObserver.observe(target));
+  revealTargets.forEach((t) => obs.observe(t));
 } else {
-  // Fallback for browsers without IntersectionObserver.
-  revealTargets.forEach((target) => target.classList.add("visible"));
+  revealTargets.forEach((t) => t.classList.add("visible"));
 }
 
-const tiltTargets = document.querySelectorAll(".card, .mini-card");
-tiltTargets.forEach((card) => {
-  card.addEventListener("mousemove", (event) => {
+// ── Card tilt effect ─────────────────────────────────────────────
+document.querySelectorAll(".card, .mini-card, .focus-card").forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    const rotY = ((x / rect.width) - 0.5) * 8;
-    const rotX = ((y / rect.height) - 0.5) * -8;
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const rotY = ((x / rect.width)  - 0.5) *  6;
+    const rotX = ((y / rect.height) - 0.5) * -6;
     card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-2px)`;
   });
   card.addEventListener("mouseleave", () => {
@@ -103,37 +123,41 @@ tiltTargets.forEach((card) => {
   });
 });
 
+// ── Starfield ────────────────────────────────────────────────────
 const canvas = document.getElementById("starfield");
 if (canvas) {
   const ctx = canvas.getContext("2d");
   let stars = [];
   let animationId = null;
-  let pointerX = window.innerWidth / 2;
+  let pointerX = window.innerWidth  / 2;
   let pointerY = window.innerHeight / 2;
 
   const resizeCanvas = () => {
     const dpr = window.devicePixelRatio || 1;
-    canvas.width = Math.floor(window.innerWidth * dpr);
+    canvas.width  = Math.floor(window.innerWidth  * dpr);
     canvas.height = Math.floor(window.innerHeight * dpr);
-    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.width  = `${window.innerWidth}px`;
     canvas.style.height = `${window.innerHeight}px`;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    stars = Array.from({ length: Math.min(180, Math.floor(window.innerWidth / 7)) }, () => ({
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
-      r: Math.random() * 1.6 + 0.35,
-      s: Math.random() * 0.28 + 0.06
-    }));
+    stars = Array.from(
+      { length: Math.min(180, Math.floor(window.innerWidth / 7)) },
+      () => ({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        r: Math.random() * 1.6 + 0.35,
+        s: Math.random() * 0.28 + 0.06,
+      })
+    );
   };
 
   const draw = () => {
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    const pullX = (pointerX - window.innerWidth / 2) * 0.0007;
+    const pullX = (pointerX - window.innerWidth  / 2) * 0.0007;
     const pullY = (pointerY - window.innerHeight / 2) * 0.0007;
     stars.forEach((star) => {
       star.x += star.s + pullX;
       star.y += star.s * 0.22 + pullY;
-      if (star.x > window.innerWidth + 4) star.x = -4;
+      if (star.x > window.innerWidth  + 4) star.x = -4;
       if (star.y > window.innerHeight + 4) star.y = -4;
       if (star.y < -4) star.y = window.innerHeight + 4;
       ctx.beginPath();
@@ -144,16 +168,11 @@ if (canvas) {
     animationId = window.requestAnimationFrame(draw);
   };
 
-  window.addEventListener("mousemove", (event) => {
-    pointerX = event.clientX;
-    pointerY = event.clientY;
-  });
+  window.addEventListener("mousemove", (e) => { pointerX = e.clientX; pointerY = e.clientY; });
   window.addEventListener("resize", resizeCanvas);
   resizeCanvas();
   draw();
   window.addEventListener("beforeunload", () => {
-    if (animationId) {
-      window.cancelAnimationFrame(animationId);
-    }
+    if (animationId) window.cancelAnimationFrame(animationId);
   });
 }

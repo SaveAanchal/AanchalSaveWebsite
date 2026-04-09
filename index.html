@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aanchal Save | Aerospace Engineering & Robot Learning</title>
+  <title>Aanchal Save | Robotics &amp; Autonomous Systems Engineer</title>
   <meta
     name="description"
-    content="Portfolio website for Aanchal Save, Aerospace Engineering student at Georgia Tech focused on robot learning, GNC, and real-world autonomy."
+    content="Aanchal Save — building learning-based robotic and autonomous systems from perception to control. Neural IK, rover autonomy, F1TENTH, orbital simulation. NASA, SpaceX, Georgia Tech."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,15 +21,17 @@
   <div class="bg-glow bg-glow-1"></div>
   <div class="bg-glow bg-glow-2"></div>
 
+  <!-- NAVIGATION -->
   <header class="site-header" id="top">
     <div class="container nav-wrap">
       <a class="brand" href="#top">Aanchal Save</a>
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
       <nav class="site-nav">
-        <a href="#about">About</a>
+        <a href="#systems">Systems</a>
+        <a href="#focus">Focus</a>
         <a href="#experience">Experience</a>
         <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
+        <a href="#systems">Projects</a>
         <a href="#publications">Publications</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
@@ -38,27 +40,39 @@
   </header>
 
   <main>
+
+    <!-- ===================== 1. HERO ===================== -->
     <section class="hero container">
       <div class="hero-layout">
         <div>
-          <p class="eyebrow">Georgia Tech Aerospace + Computer Science</p>
-          <h1>Robotics researcher building reliable autonomy from first-principles dynamics to learned control.</h1>
+          <p class="eyebrow">Georgia Tech &middot; Aerospace Engineering + CS</p>
+          <h1>Building learning-based robotic and autonomous systems &mdash; from perception to control.</h1>
           <p class="hero-copy">
-            Aerospace Engineering student at Georgia Tech focused on robotics research and real-world autonomy.
-            I've built learned control systems for NASA robotic manipulators, simulated
-            GNC algorithms at SpaceX, and currently research physics-informed policy learning and world-model RL.
-            Interested in how classical dynamics and modern learning methods combine to make robots work reliably outside the lab.
+            I design and implement pipelines where classical dynamics, learned models, and real-time planning
+            combine to make robots work reliably outside the lab.
           </p>
+          <ul class="hero-bullets">
+            <li>Built a neural IK system for a 7-DOF robotic manipulator &mdash; filed toward NASA New Technology Report, accepted IEEE ICMRE 2026</li>
+            <li>Developed autonomy pipelines for rover and F1TENTH platforms using ROS2, C++, LIDAR, and vision</li>
+            <li>Built simulation and analysis tools for constellation design, orbital propagation, and debris mitigation at SpaceX and Skyfall Space</li>
+            <li>Published and presented in IEEE, AIAA, AGU, and Computers and Fluids venues</li>
+          </ul>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="./AanchalSaveResume2026.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
-            <a class="btn btn-secondary" href="./AanchalSaveResume2026.pdf" download>Download Resume</a>
+            <a class="btn btn-primary" href="#systems">View Systems</a>
+            <a class="btn btn-secondary" href="./AanchalSaveResume2026.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
             <a class="btn btn-ghost" href="https://www.linkedin.com/in/aanchal-save" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
         <aside class="profile-card">
           <img src="./Profile Photo.jpg" alt="Portrait of Aanchal Save" class="profile-photo" />
           <p class="profile-caption">Aanchal Save</p>
-          <p class="profile-sub">Robotics · Autonomy · Space Systems</p>
+          <p class="profile-sub">Robotics &middot; Autonomy &middot; Space Systems</p>
+          <div class="profile-badges">
+            <span>NASA NTR</span>
+            <span>IEEE ICMRE 2026</span>
+            <span>AIAA ASCEND 2026</span>
+            <span>4.0 GPA</span>
+          </div>
         </aside>
       </div>
       <div class="quick-facts">
@@ -67,41 +81,549 @@
         <article><span>Minor</span><strong>Computer Science</strong></article>
         <article><span>GPA</span><strong>4.0 / 4.0</strong></article>
       </div>
-      <div class="theme-tags">
-        <span>Robotics</span>
-        <span>Autonomy</span>
-        <span>Space Systems</span>
-        <span>GNC</span>
-        <span>Embodied AI</span>
+    </section>
+
+    <!-- ===================== 2. FEATURED SYSTEMS ===================== -->
+    <section id="systems" class="section container">
+      <div class="section-label">Engineering Portfolio</div>
+      <h2>Main Projects</h2>
+      <p class="section-intro">
+        Seven major projects spanning neural robotics, world-model reinforcement learning, autonomous perception, space systems,
+        and applied computer vision/data engineering. Each reflects full-stack engineering from data and modeling to validation and deployment.
+      </p>
+
+      <!-- SYSTEM 1: Neural IK -->
+      <div class="system-card" id="system-neural-ik">
+        <div class="system-card-body">
+          <div class="system-card-header">
+            <div class="system-number">01</div>
+            <div>
+              <div class="system-tag">Learning for Robotics &nbsp;&middot;&nbsp; NASA / IEEE ICMRE 2026</div>
+              <h3>Neural Inverse Kinematics for a 7-DOF Manipulator</h3>
+              <p class="system-hook">
+                Replaced traditional IK solvers with a learned neural architecture &mdash; enabling faster,
+                more generalizable joint-space solutions for a high-DOF robotic arm.
+              </p>
+            </div>
+          </div>
+          <ul class="system-bullets">
+            <li>Designed and trained a PyTorch architecture on Gazebo + Simulink simulation data to solve both forward and inverse kinematics jointly</li>
+            <li>Introduced a validation loop using a forward kinematics model to verify candidate joint angle solutions before actuation</li>
+            <li>Novel approach filed toward NASA New Technology Report (patent process); accepted for oral presentation and publication at IEEE ICMRE 2026</li>
+          </ul>
+          <div class="pipeline-wrap">
+            <div class="pipeline-label">System Pipeline</div>
+            <div class="pipeline-diagram">
+              <div class="pipeline-step">
+                <span class="step-main">Pose Target</span>
+                <span class="step-sub">End-effector xyz + orientation</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step highlight">
+                <span class="step-main">IK Neural Network</span>
+                <span class="step-sub step-tag-brand">Learned Model</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step">
+                <span class="step-main">Candidate Joint Angles</span>
+                <span class="step-sub">7-DOF configuration</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step secondary">
+                <span class="step-main">FK Validation</span>
+                <span class="step-sub step-tag-purple">Validation Loop</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step success">
+                <span class="step-main">Valid Solution</span>
+                <span class="step-sub step-tag-green">Deployed</span>
+              </div>
+            </div>
+          </div>
+          <div class="system-stack">
+            <span>PyTorch</span><span>ROS2</span><span>Gazebo</span><span>Simulink</span><span>Python</span>
+          </div>
+          <button class="case-trigger" type="button" data-case-id="case-neural-ik">View Case Study &rarr;</button>
+        </div>
+        <div class="system-card-visual">
+          <div class="img-placeholder">
+            <p class="placeholder-title">Architecture Diagram in Case Study</p>
+            <p class="placeholder-note">Open the Neural IK case study to view the full iterative validation loop diagram.</p>
+            <p class="placeholder-meta">Focused on readability and detail in-modal</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SYSTEM 2: TD-MPC2 -->
+      <div class="system-card system-card-flip" id="system-tdmpc2">
+        <div class="system-card-visual">
+          <div class="img-placeholder">
+            <p class="placeholder-title">TD-MPC Visuals Coming Soon</p>
+            <p class="placeholder-note">Project media will be added once experiments are finalized.</p>
+            <p class="placeholder-meta">Benchmark plots and rollout comparisons</p>
+          </div>
+        </div>
+        <div class="system-card-body">
+          <div class="system-card-header">
+            <div class="system-number">02</div>
+            <div>
+              <div class="system-tag">World-Model Reinforcement Learning &nbsp;&middot;&nbsp; Georgia Tech DREAM Lab</div>
+              <h3>TD-MPC vs PPO vs PID for Goal-Directed Navigation</h3>
+              <p class="system-hook">
+                Designed and evaluated multiple control strategies (PID, PPO, TD-MPC) for goal-directed robot navigation across simulation and real-world deployment.
+              </p>
+            </div>
+          </div>
+          <ul class="system-bullets">
+            <li>Implemented and tuned three control paradigms: PID (classical control baseline), PPO (model-free reinforcement learning), and TD-MPC (learning-based model predictive control using latent dynamics)</li>
+            <li>Built a curriculum learning pipeline with progressively increasing task difficulty to improve training stability and convergence for RL and TD-MPC</li>
+            <li>Evaluated performance in simulation environments (Isaac Lab / MuJoCo) and real robot deployment for sim-to-real transfer</li>
+            <li>Compared methods using goal-reaching accuracy, trajectory efficiency, and stability/convergence behavior</li>
+            <li>Key findings: TD-MPC showed strong structured behavior and planning efficiency in simulation; PPO required significant tuning and exhibited instability; PID was reliable for simple tasks but lacked adaptability</li>
+            <li>Observed sim-to-real gap across all methods due to dynamics mismatch and unmodeled real-world effects</li>
+          </ul>
+          <div class="pipeline-wrap">
+            <div class="pipeline-label">Learning + Planning Pipeline</div>
+            <div class="pipeline-diagram">
+              <div class="pipeline-step">
+                <span class="step-main">Environment Rollouts</span>
+                <span class="step-sub">Isaac / MuJoCo / MetaWorld</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step highlight">
+                <span class="step-main">World Model Learning</span>
+                <span class="step-sub step-tag-brand">Latent dynamics</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step secondary">
+                <span class="step-main">TD-MPC2 Planning</span>
+                <span class="step-sub step-tag-purple">Model-predictive control</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step success">
+                <span class="step-main">Policy Evaluation</span>
+                <span class="step-sub step-tag-green">Robustness + sample efficiency</span>
+              </div>
+            </div>
+          </div>
+          <div class="system-stack">
+            <span>Python</span><span>PyTorch</span><span>Isaac Lab</span><span>Isaac Gym</span><span>MuJoCo</span>
+          </div>
+          <button class="case-trigger" type="button" data-case-id="case-tdmpc">View Case Study &rarr;</button>
+        </div>
+      </div>
+
+      <!-- SYSTEM 3: Rover Traversability -->
+      <div class="system-card system-card-flip" id="system-rover">
+        <div class="system-card-visual">
+          <!-- TODO: Replace with rover traversability map visualization from Wix site -->
+          <div class="img-placeholder">
+            <div class="placeholder-icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="4" width="40" height="40" rx="4" stroke="rgba(94,230,255,0.3)" stroke-width="1.5"/>
+                <rect x="10" y="10" width="8" height="8" fill="rgba(22,242,179,0.4)"/>
+                <rect x="20" y="10" width="8" height="8" fill="rgba(22,242,179,0.2)"/>
+                <rect x="30" y="10" width="8" height="8" fill="rgba(255,100,100,0.4)"/>
+                <rect x="10" y="20" width="8" height="8" fill="rgba(22,242,179,0.2)"/>
+                <rect x="20" y="20" width="8" height="8" fill="rgba(22,242,179,0.5)"/>
+                <rect x="30" y="20" width="8" height="8" fill="rgba(22,242,179,0.15)"/>
+                <rect x="10" y="30" width="8" height="8" fill="rgba(22,242,179,0.3)"/>
+                <rect x="20" y="30" width="8" height="8" fill="rgba(255,200,50,0.3)"/>
+                <rect x="30" y="30" width="8" height="8" fill="rgba(22,242,179,0.4)"/>
+              </svg>
+            </div>
+            <p class="placeholder-title">Traversability Cost Map</p>
+            <p class="placeholder-note">TODO: Add LIDAR map or rover<br/>image from Wix project gallery</p>
+            <p class="placeholder-meta">ROS2 &middot; LIDAR &middot; PCL &middot; C++</p>
+          </div>
+        </div>
+        <div class="system-card-body">
+          <div class="system-card-header">
+            <div class="system-number">03</div>
+            <div>
+              <div class="system-tag">Perception &amp; Planning &nbsp;&middot;&nbsp; RoboJackets</div>
+              <h3>Autonomous Rover Traversability Mapping</h3>
+              <p class="system-hook">
+                Built a real-time terrain analysis pipeline that converts raw LIDAR point clouds into
+                cost maps the planner can act on &mdash; closing the loop from sensor to motion.
+              </p>
+            </div>
+          </div>
+          <ul class="system-bullets">
+            <li>Implemented surface normal estimation and terrain feature extraction (slope, roughness, height variance) from 3D point clouds using PCL and ROS2 in C++</li>
+            <li>Designed a cost function mapping terrain features to traversability scores, generating a real-time cost map consumed by the motion planner</li>
+            <li>Deployed on a physical competition rover; integrated with a path planner for fully autonomous navigation in unstructured terrain</li>
+          </ul>
+          <div class="pipeline-wrap">
+            <div class="pipeline-label">Perception &rarr; Planning Pipeline</div>
+            <div class="pipeline-diagram">
+              <div class="pipeline-step">
+                <span class="step-main">LIDAR</span>
+                <span class="step-sub">3D point cloud</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step">
+                <span class="step-main">Surface Normals</span>
+                <span class="step-sub">PCL estimation</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step highlight">
+                <span class="step-main">Terrain Features</span>
+                <span class="step-sub step-tag-brand">slope &middot; roughness &middot; &Delta;h</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step secondary">
+                <span class="step-main">Cost Function</span>
+                <span class="step-sub step-tag-purple">Traversability score</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step success">
+                <span class="step-main">Planner</span>
+                <span class="step-sub step-tag-green">Cost map in</span>
+              </div>
+            </div>
+          </div>
+          <div class="system-stack">
+            <span>ROS2</span><span>C++</span><span>PCL</span><span>LIDAR</span><span>Linux</span>
+          </div>
+          <button class="case-trigger" type="button" data-case-id="case-rover">View Case Study &rarr;</button>
+        </div>
+      </div>
+
+      <!-- SYSTEM 4: F1TENTH -->
+      <div class="system-card" id="system-f1tenth">
+        <div class="system-card-body">
+          <div class="system-card-header">
+            <div class="system-number">04</div>
+            <div>
+              <div class="system-tag">Perception &amp; Control &nbsp;&middot;&nbsp; GT Active Safety Lab</div>
+              <h3>F1TENTH Autonomous Perception &amp; Avoidance Stack</h3>
+              <p class="system-hook">
+                Built a full autonomy pipeline on the F1TENTH platform &mdash; from stereo camera input
+                through YOLO detection and decision logic to real-time vehicle control output.
+              </p>
+            </div>
+          </div>
+          <ul class="system-bullets">
+            <li>Integrated stereo depth estimation with YOLO-based object detection for real-time obstacle identification, classification, and 3D localization</li>
+            <li>Designed a decision logic layer that maps detected object states to reactive avoidance and waypoint-following behaviors</li>
+            <li>Deployed closed-loop on the F1TENTH hardware platform with ROS2; validated perception-to-control latency under 100 ms</li>
+          </ul>
+          <div class="pipeline-wrap">
+            <div class="pipeline-label">Autonomy Pipeline</div>
+            <div class="pipeline-diagram">
+              <div class="pipeline-step">
+                <span class="step-main">Stereo Camera</span>
+                <span class="step-sub">RGB + depth</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step highlight">
+                <span class="step-main">YOLO Detection</span>
+                <span class="step-sub step-tag-brand">Learned Model</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step">
+                <span class="step-main">Object Recognition</span>
+                <span class="step-sub">Class + 3D pose</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step secondary">
+                <span class="step-main">Decision Logic</span>
+                <span class="step-sub step-tag-purple">Behavior selection</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step success">
+                <span class="step-main">Control Output</span>
+                <span class="step-sub step-tag-green">Steer + throttle</span>
+              </div>
+            </div>
+          </div>
+          <div class="system-stack">
+            <span>ROS2</span><span>YOLO</span><span>OpenCV</span><span>Python</span><span>C++</span><span>Stereo Depth</span>
+          </div>
+          <button class="case-trigger" type="button" data-case-id="case-f1tenth">View Case Study &rarr;</button>
+        </div>
+        <div class="system-card-visual">
+          <!-- TODO: Replace with F1TENTH platform image or detection output screenshot from Wix site -->
+          <div class="img-placeholder">
+            <div class="placeholder-icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="18" width="32" height="16" rx="3" stroke="rgba(94,230,255,0.3)" stroke-width="1.5"/>
+                <circle cx="14" cy="34" r="5" stroke="rgba(94,230,255,0.35)" stroke-width="1.5"/>
+                <circle cx="34" cy="34" r="5" stroke="rgba(94,230,255,0.35)" stroke-width="1.5"/>
+                <rect x="14" y="10" width="20" height="8" rx="2" stroke="rgba(94,230,255,0.25)" stroke-width="1"/>
+                <line x1="24" y1="18" x2="24" y2="26" stroke="rgba(94,230,255,0.2)" stroke-width="1"/>
+              </svg>
+            </div>
+            <p class="placeholder-title">F1TENTH Platform</p>
+            <p class="placeholder-note">TODO: Add F1TENTH car image or<br/>YOLO detection output from Wix</p>
+            <p class="placeholder-meta">ROS2 &middot; YOLO &middot; Stereo Depth</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SYSTEM 5: Orbital -->
+      <div class="system-card system-card-flip" id="system-orbital">
+        <div class="system-card-visual">
+          <!-- TODO: Replace with orbital simulation or constellation visualization from Wix site -->
+          <div class="img-placeholder">
+            <div class="placeholder-icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="8" fill="rgba(94,230,255,0.15)" stroke="rgba(94,230,255,0.4)" stroke-width="1.5"/>
+                <ellipse cx="24" cy="24" rx="20" ry="8" stroke="rgba(94,230,255,0.2)" stroke-width="1" stroke-dasharray="3 2"/>
+                <ellipse cx="24" cy="24" rx="14" ry="18" stroke="rgba(154,123,255,0.2)" stroke-width="1" stroke-dasharray="3 2"/>
+                <circle cx="40" cy="18" r="2.5" fill="rgba(22,242,179,0.7)"/>
+                <circle cx="32" cy="6" r="2" fill="rgba(94,230,255,0.6)"/>
+                <circle cx="10" cy="30" r="2" fill="rgba(154,123,255,0.6)"/>
+              </svg>
+            </div>
+            <p class="placeholder-title">Orbital Simulation</p>
+            <p class="placeholder-note">TODO: Add constellation or orbit<br/>visualization from Wix project gallery</p>
+            <p class="placeholder-meta">Orekit &middot; Python &middot; C++</p>
+          </div>
+        </div>
+        <div class="system-card-body">
+          <div class="system-card-header">
+            <div class="system-number">05</div>
+            <div>
+              <div class="system-tag">GNC &amp; Simulation &nbsp;&middot;&nbsp; SpaceX &middot; Skyfall Space &middot; GT SSDL</div>
+              <h3>Orbital Propagation &amp; Constellation Simulation</h3>
+              <p class="system-hook">
+                Built physics-based simulation and analysis pipelines for constellation architecture trades,
+                orbital debris propagation, and spacecraft navigation across three organizations.
+              </p>
+            </div>
+          </div>
+          <ul class="system-bullets">
+            <li>Built Orekit + Python navigation software for orbit propagation and thrust estimation supporting GT SSDL's GPDM mission; contributed to cleanroom integration and post-launch ops planning</li>
+            <li>Designed C++ and Python simulation environments at SpaceX for evaluating next-generation constellation architecture trades, with GNC metric dashboards in Matplotlib, Pandas, and Bokeh</li>
+            <li>Developed orbital debris propagation and capture simulations at Skyfall Space for a NASA-funded CubeSat active debris mitigation mission</li>
+          </ul>
+          <div class="pipeline-wrap">
+            <div class="pipeline-label">Simulation Pipeline</div>
+            <div class="pipeline-diagram">
+              <div class="pipeline-step">
+                <span class="step-main">Initial Conditions</span>
+                <span class="step-sub">TLE / state vector</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step highlight">
+                <span class="step-main">Propagation</span>
+                <span class="step-sub step-tag-brand">Orekit &middot; Physics</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step secondary">
+                <span class="step-main">Simulation</span>
+                <span class="step-sub step-tag-purple">C++ &middot; Python</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step success">
+                <span class="step-main">Analysis &amp; Viz</span>
+                <span class="step-sub step-tag-green">GNC metrics</span>
+              </div>
+            </div>
+          </div>
+          <div class="system-stack">
+            <span>Orekit</span><span>Python</span><span>C++</span><span>Pandas</span><span>Matplotlib</span><span>Bokeh</span>
+          </div>
+          <button class="case-trigger" type="button" data-case-id="case-orbital">View Case Study &rarr;</button>
+        </div>
+      </div>
+
+      <!-- SYSTEM 6: Eye Tracker -->
+      <div class="system-card" id="system-eye-tracker">
+        <div class="system-card-body">
+          <div class="system-card-header">
+            <div class="system-number">06</div>
+            <div>
+              <div class="system-tag">Computer Vision &nbsp;&middot;&nbsp; OpenCV</div>
+              <h3>Real-Time Driver Attention Monitoring (OpenCV)</h3>
+              <p class="system-hook">
+                Built a real-time computer vision pipeline to detect driver distraction using monocular camera input.
+              </p>
+            </div>
+          </div>
+          <ul class="system-bullets">
+            <li>Implemented perception pipeline stages for face detection, eye region extraction, gaze estimation, and attention classification</li>
+            <li>Used OpenCV-based classical methods (Haar cascades / CV heuristics) for low-latency performance and lightweight deployment</li>
+            <li>Designed gaze detection using relative eye positioning and motion-based heuristics</li>
+            <li>Implemented threshold-based classification to detect forward attention versus off-road gaze</li>
+            <li>Achieved real-time performance with low computational overhead and responsive detection behavior</li>
+            <li>Limitations: sensitivity to lighting conditions, reduced robustness with occlusions or glasses, and noisy gaze estimation</li>
+          </ul>
+          <div class="pipeline-wrap">
+            <div class="pipeline-label">Perception-to-Alert Pipeline</div>
+            <div class="pipeline-diagram">
+              <div class="pipeline-step">
+                <span class="step-main">Camera Frame</span>
+                <span class="step-sub">Live input stream</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step highlight">
+                <span class="step-main">Face + Eye Detection</span>
+                <span class="step-sub step-tag-brand">OpenCV features</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step secondary">
+                <span class="step-main">Gaze State Logic</span>
+                <span class="step-sub step-tag-purple">Attention classification</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step success">
+                <span class="step-main">Driver Alert</span>
+                <span class="step-sub step-tag-green">Audio/visual warning</span>
+              </div>
+            </div>
+          </div>
+          <div class="system-stack">
+            <span>Python</span><span>OpenCV</span>
+          </div>
+          <button class="case-trigger" type="button" data-case-id="case-eye-tracker">View Case Study &rarr;</button>
+        </div>
+        <div class="system-card-visual">
+          <div class="img-placeholder">
+            <p class="placeholder-title">Driver Attention Demo in Case Study</p>
+            <p class="placeholder-note">Open case study to watch full demo video and technical breakdown.</p>
+            <p class="placeholder-meta">OpenCV &middot; gaze heuristics &middot; real-time alerting</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SYSTEM 7: GRACE -->
+      <div class="system-card system-card-flip" id="system-grace">
+        <div class="system-card-visual">
+          <div class="img-placeholder">
+            <p class="placeholder-title">GRACE Tool Demo in Case Study</p>
+            <p class="placeholder-note">Open case study to view the full dashboard walkthrough video.</p>
+            <p class="placeholder-meta">NetCDF processing &middot; interactive geospatial visualization</p>
+          </div>
+        </div>
+        <div class="system-card-body">
+          <div class="system-card-header">
+            <div class="system-number">07</div>
+            <div>
+              <div class="system-tag">Data Engineering &amp; Scientific Visualization &nbsp;&middot;&nbsp; GRACE</div>
+              <h3>GRACE Remote Sensing Data Visualization Dashboard</h3>
+              <p class="system-hook">
+                Developed an interactive dashboard for exploring GRACE satellite data across spatial and temporal dimensions.
+              </p>
+            </div>
+          </div>
+          <ul class="system-bullets">
+            <li>Built a data pipeline to parse NetCDF satellite datasets and process time-series plus geospatial data</li>
+            <li>Implemented interactive visualization features including time slider exploration, adjustable colormaps/scaling, and zoom/pan for spatial analysis</li>
+            <li>Mapped scientific data to visual representations for intuitive interpretation and rapid exploration of large datasets</li>
+            <li>Designed UI interactions to support dynamic parameter control and real-time rendering updates</li>
+            <li>Used by researchers and credited by UT Center for Space Research</li>
+            <li>Challenges: handling large dataset performance and balancing resolution versus interactivity</li>
+          </ul>
+          <div class="pipeline-wrap">
+            <div class="pipeline-label">Scientific Data Pipeline</div>
+            <div class="pipeline-diagram">
+              <div class="pipeline-step">
+                <span class="step-main">GRACE NetCDF Data</span>
+                <span class="step-sub">Gravity anomaly timeseries</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step highlight">
+                <span class="step-main">Preprocessing</span>
+                <span class="step-sub step-tag-brand">Filtering + normalization</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step secondary">
+                <span class="step-main">Interactive Dashboard</span>
+                <span class="step-sub step-tag-purple">ipywidgets + matplotlib</span>
+              </div>
+              <div class="pipeline-arrow">&rarr;</div>
+              <div class="pipeline-step success">
+                <span class="step-main">Research Insight</span>
+                <span class="step-sub step-tag-green">Trend interpretation</span>
+              </div>
+            </div>
+          </div>
+          <div class="system-stack">
+            <span>Python</span><span>NetCDF</span><span>Visualization Libraries</span>
+          </div>
+          <button class="case-trigger" type="button" data-case-id="case-grace">View Case Study &rarr;</button>
+        </div>
       </div>
     </section>
 
-    <section id="about" class="section container">
-      <h2>About</h2>
-      <p>
-        I work on the boundary between robotics, guidance/navigation/control (GNC), and machine learning,
-        with a focus on robust real-world autonomy. My experience spans spacecraft constellation simulation,
-        kinematics learning for high-DOF manipulators, reinforcement learning world models, and satellite operations.
+    <!-- ===================== 3. TECHNICAL FOCUS ===================== -->
+    <section id="focus" class="section container">
+      <div class="section-label">Research Themes</div>
+      <h2>Technical Focus</h2>
+      <p class="section-intro">
+        Four interconnected areas that span the full perception &rarr; learning &rarr; control stack.
+        Each connects multiple projects and reflects a deliberate engineering direction.
       </p>
-      <p>
-        Across internships and research labs, I build software that is both principled and deployable:
-        from Orekit-based orbit navigation tools and physics simulators in C++/Python to ROS2 systems that combine
-        perception, planning, and language interfaces.
-      </p>
+      <div class="focus-grid">
+        <div class="focus-card">
+          <div class="focus-icon-wrap focus-icon-blue">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="5" r="3" fill="currentColor" opacity="0.9"/><circle cx="4" cy="16" r="3" fill="currentColor" opacity="0.6"/><circle cx="18" cy="16" r="3" fill="currentColor" opacity="0.6"/><line x1="11" y1="8" x2="4" y2="13" stroke="currentColor" stroke-width="1.2" opacity="0.5"/><line x1="11" y1="8" x2="18" y2="13" stroke="currentColor" stroke-width="1.2" opacity="0.5"/></svg>
+          </div>
+          <h3>Learning for Robotics</h3>
+          <p>Applying deep learning to replace or augment classical control methods where learned models provide flexibility that hand-crafted solvers cannot match at scale or across configurations.</p>
+          <div class="focus-projects">
+            <span>Neural IK (7-DOF)</span>
+            <span>TD-MPC2 World-Model RL</span>
+            <span>Isaac Lab Benchmarks</span>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-icon-wrap focus-icon-green">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.5" opacity="0.5"/><circle cx="11" cy="11" r="3" fill="currentColor" opacity="0.8"/><line x1="11" y1="3" x2="11" y2="7" stroke="currentColor" stroke-width="1.2"/><line x1="19" y1="11" x2="15" y2="11" stroke="currentColor" stroke-width="1.2"/></svg>
+          </div>
+          <h3>Perception &amp; Autonomy</h3>
+          <p>Closing the loop from raw sensor data to robot action &mdash; building pipelines where perception informs planning and planning drives real-time control on physical hardware.</p>
+          <div class="focus-projects">
+            <span>Rover Traversability</span>
+            <span>F1TENTH Avoidance Stack</span>
+            <span>YOLO + Stereo Depth</span>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-icon-wrap focus-icon-purple">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="5" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5" opacity="0.6"/><line x1="3" y1="9" x2="19" y2="9" stroke="currentColor" stroke-width="1" opacity="0.4"/><circle cx="7" cy="7" r="1" fill="currentColor" opacity="0.7"/><circle cx="10" cy="7" r="1" fill="currentColor" opacity="0.5"/></svg>
+          </div>
+          <h3>Simulation &amp; Modeling</h3>
+          <p>Building high-fidelity simulation environments for validating control algorithms, training learned models, and testing system behavior before hardware deployment.</p>
+          <div class="focus-projects">
+            <span>Gazebo + MuJoCo</span>
+            <span>Nvidia Isaac Lab</span>
+            <span>Orbital Propagation</span>
+          </div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-icon-wrap focus-icon-cyan">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="4" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/><ellipse cx="11" cy="11" rx="9" ry="4" stroke="currentColor" stroke-width="1" opacity="0.4" stroke-dasharray="2 1.5"/><circle cx="18" cy="7" r="2" fill="currentColor" opacity="0.7"/><circle cx="5" cy="15" r="1.5" fill="currentColor" opacity="0.5"/></svg>
+          </div>
+          <h3>Space Systems &amp; GNC</h3>
+          <p>Designing and implementing guidance, navigation, and control software for spacecraft &mdash; from orbit propagation to constellation architecture analysis and mission operations.</p>
+          <div class="focus-projects">
+            <span>SpaceX Constellation Trades</span>
+            <span>Skyfall CubeSat</span>
+            <span>GPDM Mission (GT SSDL)</span>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- ===================== EXPERIENCE ===================== -->
     <section id="experience" class="section container">
+      <div class="section-label">Industry &amp; Research</div>
       <h2>Experience</h2>
       <div class="timeline">
+
         <article class="card">
           <img src="./spacex_logo.jpg" alt="SpaceX logo" />
           <div>
-            <h3>SpaceX · GNC Engineering Intern</h3>
-            <p class="meta">Aug 2025 - Dec 2025 · Hawthorne, CA</p>
+            <h3>SpaceX &middot; GNC Engineering Intern</h3>
+            <p class="meta">Aug 2025 &ndash; Dec 2025 &middot; Hawthorne, CA</p>
             <ul>
-              <li>Designed and evaluated next-generation constellation architecture concepts and trades.</li>
+              <li>Designed and evaluated next-generation constellation architecture concepts and trade studies.</li>
               <li>Built physics-based simulation and analysis pipelines in Python and C++.</li>
-              <li>Developed data visualization tooling with Matplotlib, Pandas, and Bokeh.</li>
+              <li>Developed data visualization tooling with Matplotlib, Pandas, and Bokeh for GNC metric dashboards.</li>
             </ul>
           </div>
         </article>
@@ -109,11 +631,11 @@
         <article class="card">
           <img src="./skyfallspace_logo.jpg" alt="Skyfall Space logo" />
           <div>
-            <h3>Skyfall Space · Software Engineer (Part-time)</h3>
-            <p class="meta">May 2025 - Aug 2025</p>
+            <h3>Skyfall Space &middot; Software Engineer (Part-time)</h3>
+            <p class="meta">May 2025 &ndash; Aug 2025</p>
             <ul>
-              <li>Contributed to NASA-funded CubeSat startup for orbital debris mitigation.</li>
-              <li>Developed orbit and capture simulations plus debris propagation models.</li>
+              <li>Contributed to NASA-funded CubeSat startup focused on active orbital debris mitigation.</li>
+              <li>Developed orbit and capture simulations and debris propagation models.</li>
             </ul>
           </div>
         </article>
@@ -121,12 +643,12 @@
         <article class="card">
           <img src="./amentumcorp_logo.jpg" alt="Amentum logo" />
           <div>
-            <h3>Amentum @ NASA MSFC · Robotics and ML Intern</h3>
-            <p class="meta">May 2025 - Aug 2025 · Huntsville, AL</p>
+            <h3>Amentum @ NASA MSFC &middot; Robotics and ML Intern</h3>
+            <p class="meta">May 2025 &ndash; Aug 2025 &middot; Huntsville, AL</p>
             <ul>
-              <li>Built deep learning architecture in PyTorch for forward and inverse kinematics on a 7-DOF arm.</li>
-              <li>Created a novel inverse kinematics solution accepted toward NASA New Technology Report patent process.</li>
-              <li>Integrated ROS2 edge systems with LLM + RAG control and perception modules for natural language interaction.</li>
+              <li>Designed and trained a PyTorch deep learning architecture for forward and inverse kinematics on a 7-DOF robotic arm.</li>
+              <li>Created a novel IK solution filed toward NASA New Technology Report (patent process); accepted at IEEE ICMRE 2026.</li>
+              <li>Integrated ROS2 systems with LLM + RAG control and perception modules for natural language robotic interaction.</li>
             </ul>
           </div>
         </article>
@@ -134,23 +656,12 @@
         <article class="card">
           <img src="./research_at_georgia_tech_logo.jpg" alt="Georgia Tech Research logo" />
           <div>
-            <h3>Georgia Tech Research · Undergraduate Research Assistant</h3>
-            <p class="meta">Nov 2024 - Present · Atlanta, GA</p>
+            <h3>Georgia Tech Research &middot; Undergraduate Research Assistant</h3>
+            <p class="meta">Nov 2024 &ndash; Present &middot; Atlanta, GA</p>
             <ul>
-              <li>SSDL (GPDM Mission): navigation software for orbit propagation and thrust estimation using Orekit + Python.</li>
-              <li>CEREAL Lab: Bayesian ML for wing pressure prediction and LLM-assisted aerodynamics insight systems.</li>
+              <li>SSDL (GPDM Mission): built navigation software for orbit propagation and thrust estimation using Orekit + Python.</li>
+              <li>CEREAL Lab: Bayesian ML for wing pressure prediction; LLM-assisted aerodynamics insight systems.</li>
               <li>DREAM Lab: TD-MPC2 world-model RL and sim-to-real robustness benchmarks in Isaac Lab, MuJoCo, and MetaWorld.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="./aero_maker_space_logo.jpg" alt="Aero Maker Space logo" />
-          <div>
-            <h3>Aero Maker Space · Prototyping Mentor (Part-time)</h3>
-            <p class="meta">Jan 2025 - May 2025</p>
-            <ul>
-              <li>Mentored students through aerospace design and fabrication workflows.</li>
             </ul>
           </div>
         </article>
@@ -158,10 +669,10 @@
         <article class="card">
           <img src="./georgia_tech_robojackets_logo.jpg" alt="RoboJackets logo" />
           <div>
-            <h3>RoboJackets · Software and Mechanical Team</h3>
-            <p class="meta">Sep 2024 - May 2025</p>
+            <h3>RoboJackets &middot; Software and Mechanical Team</h3>
+            <p class="meta">Sep 2024 &ndash; May 2025</p>
             <ul>
-              <li>Implemented autonomous rover navigation using ROS2 + C++ and LIDAR traversability mapping.</li>
+              <li>Implemented autonomous rover navigation using ROS2 + C++ with LIDAR traversability mapping.</li>
               <li>Designed and machined robot components with mills, lathes, and waterjet workflows.</li>
             </ul>
           </div>
@@ -170,10 +681,10 @@
         <article class="card">
           <img src="./VIP.jpg" alt="Georgia Tech VIP logo" />
           <div>
-            <h3>Georgia Tech VIP · Active Safety Researcher</h3>
-            <p class="meta">Aug 2024 - Dec 2024</p>
+            <h3>Georgia Tech VIP &middot; Active Safety Researcher</h3>
+            <p class="meta">Aug 2024 &ndash; Dec 2024</p>
             <ul>
-              <li>Built autonomous perception and avoidance stack on F1-Tenth platform with stereo depth and YOLO.</li>
+              <li>Built autonomous perception and avoidance stack on F1TENTH platform using stereo depth estimation and YOLO.</li>
             </ul>
           </div>
         </article>
@@ -181,238 +692,577 @@
         <article class="card">
           <img src="./nasa_logo.jpg" alt="NASA logo" />
           <div>
-            <h3>NASA · Intern and Peer Mentor Roles</h3>
-            <p class="meta">May 2022 - Dec 2023 · Austin, TX</p>
+            <h3>NASA &middot; Intern and Peer Mentor</h3>
+            <p class="meta">May 2022 &ndash; Dec 2023 &middot; Austin, TX</p>
             <ul>
               <li>Command and data handling for high-altitude balloon telemetry systems.</li>
               <li>Remote sensing and lunar sensor experimentation in C++.</li>
-              <li>Peer mentor for atmospheric and eclipse ballooning studies presented at AGU 2023.</li>
+              <li>Peer mentor for atmospheric and eclipse ballooning studies; results presented at AGU Fall Meeting 2023.</li>
             </ul>
           </div>
         </article>
+
       </div>
     </section>
 
+    <!-- ===================== RESEARCH ===================== -->
     <section id="research" class="section container">
-      <h2>Research Focus (Robotics + Autonomy)</h2>
-      <p>
-        My research sits at the intersection of classical aerospace dynamics and modern machine learning for autonomy.
-        I focus on methods that are both theoretically grounded and deployable in safety-critical environments.
+      <div class="section-label">Research Program</div>
+      <h2>Research</h2>
+      <p class="section-intro">
+        Ongoing and published work across learning-based control, robotics autonomy, aerospace modeling, and scientific computing.
+        This section separates research direction and output from project implementation details.
       </p>
-      <div class="grid-3">
-        <article class="mini-card">
-          <h3>Robot Learning + Control</h3>
-          <p>
-            Implemented and evaluated TD-MPC2 world-model RL for robust, data-efficient control.
-          </p>
-          <button class="detail-trigger" type="button" data-title="Robot Learning + Control" data-detail="Implemented and evaluated TD-MPC2 world-model reinforcement learning, combining learned latent dynamics with online planning for robust, data-efficient control. Benchmarked performance against PPO and PID-style baselines with focus on stability and sample efficiency.">Read research details</button>
+
+      <div class="research-grid">
+        <article class="research-card">
+          <h3>Active Research Threads</h3>
+          <ul>
+            <li><strong>Learning-Based Control:</strong> TD-MPC vs PPO vs PID for goal-directed navigation, with emphasis on stability, sample efficiency, and sim-to-real behavior.</li>
+            <li><strong>Robotic Kinematics Learning:</strong> Neural IK architectures for high-DOF manipulation with FK-based validation loops and deployment constraints.</li>
+            <li><strong>Perception for Safety:</strong> Real-time visual attention and autonomy pipelines under low-latency embedded constraints.</li>
+            <li><strong>Space Systems Modeling:</strong> Orbit propagation, constellation analysis, and debris mitigation simulation for mission design workflows.</li>
+          </ul>
         </article>
-        <article class="mini-card">
-          <h3>Spacecraft GNC + Mission Ops</h3>
-          <p>
-            Built orbit propagation and thrust estimation software and supported mission operations.
-          </p>
-          <button class="detail-trigger" type="button" data-title="Spacecraft GNC + Mission Ops" data-detail="Built navigation software for orbit propagation and thrust estimation using Orekit + Python, and contributed to mission integration, cleanroom testing, and post-launch operations planning with NASA collaboration workflows.">Read research details</button>
+
+        <article class="research-card">
+          <h3>Current Labs and Scope</h3>
+          <ul>
+            <li><strong>DREAM Lab (GT Europe):</strong> World-model RL robustness studies and benchmark design in Isaac Lab/MuJoCo.</li>
+            <li><strong>CEREAL Lab:</strong> Bayesian/ML approaches for aerodynamic pressure prediction and insight tooling.</li>
+            <li><strong>SSDL (GPDM Mission):</strong> Navigation software, orbit propagation, and thrust estimation pipelines.</li>
+          </ul>
+          <div class="research-tags">
+            <span>World-Model RL</span><span>Sim-to-Real</span><span>Neural IK</span><span>Orbit Dynamics</span>
+          </div>
         </article>
-        <article class="mini-card">
-          <h3>Embodied AI Systems</h3>
-          <p>
-            Developed perception-control stacks with kinematics learning, ROS2, and language interfaces.
-          </p>
-          <button class="detail-trigger" type="button" data-title="Embodied AI Systems" data-detail="Developed perception + control pipelines spanning kinematics learning, YOLO-based perception, ROS2 integration, and language-enabled robotic interfaces for both manipulation and autonomous navigation tasks.">Read research details</button>
-        </article>
-      </div>
-      <div class="grid-2" style="margin-top: 0.95rem;">
-        <article class="mini-card">
-          <h3>DREAM Lab (Georgia Tech Europe)</h3>
-          <p>
-            Cross-domain world-model RL studies in Isaac Lab, MuJoCo, and MetaWorld.
-          </p>
-          <button class="detail-trigger" type="button" data-title="DREAM Lab (Georgia Tech Europe)" data-detail="Led cross-domain world-model RL experiments in Nvidia Isaac Lab, MuJoCo, and MetaWorld to evaluate scaling behavior and sim-to-real robustness for next-generation model-based autonomy in robotics navigation benchmarks.">Read research details</button>
-        </article>
-        <article class="mini-card">
-          <h3>CEREAL + SSDL + Dynamics & Controls Labs</h3>
-          <p>
-            Bayesian ML, F1-Tenth autonomy, and satellite operations software across GT labs.
-          </p>
-          <button class="detail-trigger" type="button" data-title="CEREAL + SSDL + Dynamics & Controls Labs" data-detail="Developed Bayesian ML frameworks for airfoil pressure prediction, LLM/RAG-assisted aerodynamics insight tools, F1-Tenth autonomous perception and avoidance with ROS2 + vision, and satellite operations software for GPDM mission workflows.">Read research details</button>
+
+        <article class="research-card">
+          <h3>Publication Snapshot</h3>
+          <ul>
+            <li>IEEE ICMRE 2026: Neural-network approach for forward/inverse kinematics on a 7-DOF manipulator.</li>
+            <li>AIAA ASCEND 2026: Distributed intelligence architecture for responsive edge robotics command handling.</li>
+            <li>Computers and Fluids (2025): Large airfoil models.</li>
+            <li>AGU Fall Meeting 2023: Atmospheric effects during solar eclipses using high-altitude balloon data.</li>
+          </ul>
+          <p class="research-note">See the full citations and links in Publications below.</p>
         </article>
       </div>
     </section>
 
-    <section id="projects" class="section container">
-      <h2>Selected Projects</h2>
-      <div class="grid-2">
-        <article class="mini-card">
-          <h3>Neural Inverse Kinematics for 7-DOF Manipulator</h3>
-          <p>Built a PyTorch architecture for forward/inverse kinematics with simulation data.</p>
-          <button class="detail-trigger" type="button" data-title="Neural Inverse Kinematics for 7-DOF Manipulator" data-detail="Developed a first-of-its-kind PyTorch architecture for forward and inverse kinematics using Gazebo + Simulink simulation data, enabling a more efficient replacement for traditional inverse kinematics approaches in robotic arm control.">View project details</button>
-        </article>
-        <article class="mini-card">
-          <h3>Constellation Trade Simulation Tools</h3>
-          <p>Created simulation environments and metric dashboards for constellation design.</p>
-          <button class="detail-trigger" type="button" data-title="Constellation Trade Simulation Tools" data-detail="Built C++ and Python simulation environments and metric dashboards to evaluate architecture trades and support constellation design decisions for GNC workflows.">View project details</button>
-        </article>
-        <article class="mini-card">
-          <h3>CubeSat Debris Mitigation Simulation</h3>
-          <p>Built orbit and capture simulations for active orbital debris mitigation.</p>
-          <button class="detail-trigger" type="button" data-title="CubeSat Debris Mitigation Simulation" data-detail="Developed orbit and capture simulations and debris propagation modeling for a NASA-funded CubeSat startup focused on orbital debris elimination.">View project details</button>
-        </article>
-        <article class="mini-card">
-          <h3>Autonomous Rover Traversability Mapping</h3>
-          <p>Developed LIDAR-driven traversability mapping and motion planning in ROS2 + C++.</p>
-          <button class="detail-trigger" type="button" data-title="Autonomous Rover Traversability Mapping" data-detail="Implemented autonomous rover navigation using ROS2 + C++, generating traversability maps from LIDAR data for real-time motion planning in competition environments.">View project details</button>
-        </article>
-        <article class="mini-card">
-          <h3>GRACE Data Visualization Dashboard</h3>
-          <p>
-            Built an interactive dashboard for GRACE satellite trend analysis.
-          </p>
-          <button class="detail-trigger" type="button" data-title="GRACE Data Visualization Dashboard" data-detail="Built an interactive dashboard to visualize GRACE satellite data and trends, improving exploratory analysis and making geophysical signal interpretation faster and more intuitive.">View project details</button>
-        </article>
-        <article class="mini-card">
-          <h3>Distracted Driving Prevention (OpenCV)</h3>
-          <p>Developed an OpenCV pipeline for near real-time driver attention monitoring.</p>
-          <button class="detail-trigger" type="button" data-title="Distracted Driving Prevention (OpenCV)" data-detail="Developed a computer-vision-driven application for monitoring driver attention and identifying distraction indicators in near real-time using OpenCV-based perception methods.">View project details</button>
-        </article>
-        <article class="mini-card">
-          <h3>CEREAL LLM Testing</h3>
-          <p>Evaluated LLM workflows for aerodynamics insight and research support.</p>
-          <button class="detail-trigger" type="button" data-title="CEREAL LLM Testing" data-detail="Prototyped and evaluated LLM-based workflows for aerodynamics and research support tasks, focusing on reliability, technical insight extraction, and domain-grounded responses.">View project details</button>
-        </article>
-        <article class="mini-card">
-          <h3>FTC Skystone Robotics Codebase</h3>
-          <p>Contributed to a robotics codebase in Java with systems-level debugging.</p>
-          <button class="detail-trigger" type="button" data-title="FTC Skystone Robotics Codebase" data-detail="Contributed to a competitive robotics software stack in Java, applying practical control logic, systems integration, and hardware-software debugging in competition contexts.">View project details</button>
-        </article>
-      </div>
-    </section>
-
+    <!-- ===================== 5. PUBLICATIONS ===================== -->
     <section id="publications" class="section container">
-      <h2>Publications & Presentations</h2>
-      <p>
-        My publication record spans robotics, distributed intelligence, aerodynamics, and atmospheric sensing, with work presented
-        in IEEE, AIAA, and AGU venues.
+      <div class="section-label">Research Output</div>
+      <h2>Publications &amp; Presentations</h2>
+      <p class="section-intro">
+        Published and accepted work spanning robotics, distributed intelligence, aerodynamics, and atmospheric sensing
+        in IEEE, AIAA, Computers and Fluids, and AGU venues.
       </p>
       <ul class="pub-list">
-        <li>
-          <strong>Save, A.</strong> Artificial Neural Networks for Solving Forward and Inverse Kinematics on a 7-DOF Robotic Manipulator.
-          <em>IEEE ICMRE 2026</em> (accepted for oral presentation and publication in IEEE Xplore).
+        <li class="pub-item">
+          <div class="pub-venue pub-venue-primary">IEEE ICMRE 2026 &middot; Accepted Oral + IEEE Xplore</div>
+          <div class="pub-title"><strong>Save, A.</strong> Artificial Neural Networks for Solving Forward and Inverse Kinematics on a 7-DOF Robotic Manipulator.</div>
+          <div class="pub-note">Also filed toward NASA New Technology Report (patent process).</div>
         </li>
-        <li>
-          <strong>Lowman, W., Save, A., Ho, D., et al.</strong> A Distributed Intelligence Architecture for Responsive Command Handling in Edge Robotics.
-          <em>AIAA ASCEND 2026</em> (accepted oral presentation and publication).
+        <li class="pub-item">
+          <div class="pub-venue pub-venue-primary">AIAA ASCEND 2026 &middot; Accepted Oral + Publication</div>
+          <div class="pub-title"><strong>Lowman, W., Save, A., Ho, D., et al.</strong> A Distributed Intelligence Architecture for Responsive Command Handling in Edge Robotics.</div>
         </li>
-        <li>
-          <strong>Lee, H., Save, A., Seshadri, P., et al.</strong> Large airfoil models.
-          <em>Computers and Fluids</em> (2025). <a href="https://doi.org/10.1016/j.compfluid.2025.106662" target="_blank" rel="noopener noreferrer">DOI link</a>
+        <li class="pub-item">
+          <div class="pub-venue pub-venue-primary">Computers and Fluids (2025) &middot; Journal Publication</div>
+          <div class="pub-title"><strong>Lee, H., Save, A., Seshadri, P., et al.</strong> Large airfoil models. <a href="https://doi.org/10.1016/j.compfluid.2025.106662" target="_blank" rel="noopener noreferrer">DOI &rarr;</a></div>
         </li>
-        <li>
-          Exploring Atmospheric Effects During Solar Eclipses: High-Altitude Ballooning Data Collection & Analysis.
-          <em>American Geophysical Union (AGU) Fall Meeting 2023</em>.
+        <li class="pub-item">
+          <div class="pub-venue">AGU Fall Meeting 2023</div>
+          <div class="pub-title">Exploring Atmospheric Effects During Solar Eclipses: High-Altitude Ballooning Data Collection &amp; Analysis.</div>
         </li>
       </ul>
     </section>
 
+    <!-- ===================== 6. SKILLS ===================== -->
     <section id="skills" class="section container">
+      <div class="section-label">Technical Stack</div>
       <h2>Skills</h2>
-      <p>Choose a category to explore the stack I use across robotics research and real-world autonomy projects.</p>
+      <p class="section-intro">Choose a category to explore the stack I use across robotics research and real-world autonomy projects.</p>
       <div class="skills-explorer">
         <div class="skills-tabs" role="tablist" aria-label="Skill categories">
           <button class="skill-tab active" type="button" role="tab" aria-selected="true" data-skill-tab="software">Software</button>
-          <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="robotics">Robotics</button>
+          <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="robotics">Robotics &amp; Control</button>
           <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="ml">ML + Perception</button>
           <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="simulation">Simulation</button>
-          <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="gnc">Aerospace + GNC</button>
-          <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="systems">Tools + Systems</button>
-          <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="certs">Certifications</button>
+          <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="gnc">Aerospace &amp; GNC</button>
+          <button class="skill-tab" type="button" role="tab" aria-selected="false" data-skill-tab="systems">Tools &amp; Systems</button>
         </div>
 
         <article class="skill-panel active" role="tabpanel" data-skill-panel="software">
-          <h3>Programming & Software Engineering</h3>
+          <h3>Programming &amp; Software Engineering</h3>
           <div class="chip-wrap">
             <span class="chip">Python</span><span class="chip">C++</span><span class="chip">Java</span>
-            <span class="chip">MATLAB</span><span class="chip">JavaScript/TypeScript</span><span class="chip">SQL</span>
-            <span class="chip">OOP Design</span><span class="chip">Data Structures & Algorithms</span>
+            <span class="chip">MATLAB</span><span class="chip">JavaScript / TypeScript</span><span class="chip">SQL</span>
+            <span class="chip">OOP Design</span><span class="chip">Data Structures &amp; Algorithms</span>
             <span class="chip">Scalable Systems</span><span class="chip">Real-time Systems</span>
           </div>
         </article>
 
         <article class="skill-panel" role="tabpanel" data-skill-panel="robotics" hidden>
-          <h3>Robotics, Autonomy & Control</h3>
+          <h3>Robotics, Autonomy &amp; Control</h3>
           <div class="chip-wrap">
-            <span class="chip">System Modeling</span><span class="chip">Dynamics & Kinematics</span><span class="chip">PID</span>
-            <span class="chip">MPC</span><span class="chip">MPPI</span><span class="chip">Kalman Filter</span>
-            <span class="chip">EKF</span><span class="chip">Path Planning</span><span class="chip">Autonomous Systems</span>
+            <span class="chip">System Modeling</span><span class="chip">Dynamics &amp; Kinematics</span>
+            <span class="chip">PID</span><span class="chip">MPC</span><span class="chip">MPPI</span>
+            <span class="chip">Kalman Filter</span><span class="chip">EKF</span>
+            <span class="chip">Path Planning</span><span class="chip">Traversability Mapping</span>
           </div>
         </article>
 
         <article class="skill-panel" role="tabpanel" data-skill-panel="ml" hidden>
-          <h3>Machine Learning, AI & Perception</h3>
+          <h3>Machine Learning, AI &amp; Perception</h3>
           <div class="chip-wrap">
-            <span class="chip">Neural Networks</span><span class="chip">Supervised Learning</span><span class="chip">Reinforcement Learning</span>
-            <span class="chip">Computer Vision</span><span class="chip">Sensor Fusion</span>
-            <span class="chip">Learning-based Modeling</span><span class="chip">Decision-making</span>
+            <span class="chip">Neural Networks (PyTorch)</span><span class="chip">Supervised Learning</span>
+            <span class="chip">Reinforcement Learning</span><span class="chip">World-Model RL (TD-MPC2)</span>
+            <span class="chip">Computer Vision</span><span class="chip">YOLO</span>
+            <span class="chip">Sensor Fusion</span><span class="chip">Bayesian ML</span>
           </div>
         </article>
 
         <article class="skill-panel" role="tabpanel" data-skill-panel="simulation" hidden>
-          <h3>Simulation & Robotics Platforms</h3>
+          <h3>Simulation &amp; Robotics Platforms</h3>
           <div class="chip-wrap">
             <span class="chip">Gazebo</span><span class="chip">Simulink</span><span class="chip">MuJoCo</span>
-            <span class="chip">Isaac Sim</span><span class="chip">Isaac Lab</span><span class="chip">OpenCV</span><span class="chip">PCL</span>
+            <span class="chip">Isaac Sim</span><span class="chip">Isaac Lab</span>
+            <span class="chip">OpenCV</span><span class="chip">PCL</span><span class="chip">Orekit</span>
           </div>
         </article>
 
         <article class="skill-panel" role="tabpanel" data-skill-panel="gnc" hidden>
-          <h3>Aerospace & GNC</h3>
+          <h3>Aerospace &amp; GNC</h3>
           <div class="chip-wrap">
-            <span class="chip">Attitude Determination & Control</span><span class="chip">Orbital Mechanics</span>
+            <span class="chip">Attitude Determination &amp; Control</span><span class="chip">Orbital Mechanics</span>
             <span class="chip">Spacecraft Systems</span><span class="chip">Trajectory Modeling</span>
+            <span class="chip">Constellation Design</span><span class="chip">Debris Propagation</span>
           </div>
         </article>
 
         <article class="skill-panel" role="tabpanel" data-skill-panel="systems" hidden>
-          <h3>Tools & Systems</h3>
+          <h3>Tools &amp; Systems</h3>
           <div class="chip-wrap">
-            <span class="chip">ROS2</span><span class="chip">Git</span><span class="chip">Linux/Unix</span>
+            <span class="chip">ROS2</span><span class="chip">Git</span><span class="chip">Linux / Unix</span>
             <span class="chip">Data Pipelines</span><span class="chip">System Integration</span>
+            <span class="chip">Pandas</span><span class="chip">Matplotlib</span><span class="chip">Bokeh</span>
           </div>
         </article>
 
-        <article class="skill-panel" role="tabpanel" data-skill-panel="certs" hidden>
-          <h3>Certifications</h3>
-          <div class="chip-wrap">
-            <span class="chip">Certified SolidWorks Associate</span><span class="chip">Java IT Specialist</span>
-            <span class="chip">Autodesk Inventor</span><span class="chip">Microsoft Office Specialist</span>
-          </div>
-        </article>
       </div>
     </section>
+
   </main>
 
+  <!-- ===================== CONTACT / FOOTER ===================== -->
   <footer id="contact" class="site-footer">
     <div class="container footer-wrap">
       <p>
-        <strong>Aanchal Save</strong> · Austin, TX ·
-        <a href="mailto:asave7@gatech.edu">asave7@gatech.edu</a> ·
-        <a href="tel:+15127154783">(512) 715-4783</a>
+        <strong>Aanchal Save</strong> &middot; Austin, TX &middot;
+        <a href="mailto:asave7@gatech.edu">asave7@gatech.edu</a>
       </p>
       <p>
         <a href="https://www.linkedin.com/in/aanchal-save" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        ·
+        &middot;
         <a href="./AanchalSaveResume2026.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
       </p>
     </div>
   </footer>
 
+  <!-- ===================== MODALS ===================== -->
+
+  <!-- Generic detail modal -->
   <div class="detail-modal" id="detailModal" hidden>
     <div class="detail-overlay" data-close-modal></div>
     <article class="detail-dialog" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
-      <button class="detail-close" type="button" data-close-modal aria-label="Close detail popup">Close</button>
+      <button class="detail-close" type="button" data-close-modal aria-label="Close">&#x2715;</button>
       <h3 id="detailTitle"></h3>
-      <p id="detailBody"></p>
+      <div id="detailBody"></div>
     </article>
+  </div>
+
+  <!-- ===================== CASE STUDY CONTENT ===================== -->
+
+  <!-- Neural IK Case Study -->
+  <div id="case-neural-ik" hidden data-title="Neural IK for 7-DOF Manipulator &mdash; Case Study">
+    <div class="case-study-content">
+      <div class="case-section">
+        <h4>Problem</h4>
+        <p>Solve inverse kinematics for a 7-DOF robotic manipulator faster and more generally than traditional Jacobian-based or optimization-based solvers, which are slow, susceptible to singularities, and require per-configuration tuning.</p>
+      </div>
+      <div class="case-section">
+        <h4>Why It Is Hard</h4>
+        <p>A 7-DOF arm is kinematically redundant &mdash; infinitely many joint configurations map to the same end-effector pose. Closed-form IK is intractable; iterative solvers diverge near singularities or get trapped in local minima. A learned approach must generalize across the full reachable workspace from finite simulation data.</p>
+      </div>
+      <div class="case-section">
+        <h4>System Overview</h4>
+        <p>A PyTorch network trained on (end-effector pose) &rarr; (joint angles) mappings generated in Gazebo + Simulink. A forward kinematics model serves as a validation layer before any solution is actuated, closing the correctness loop.</p>
+      </div>
+      <div class="case-section">
+        <h4>Architecture &amp; Pipeline</h4>
+        <img src="./wix_images/ik_iterative_arch.jpg" alt="Iterative validation loop for neural IK with FK verification before actuation" class="case-study-image" />
+        <div class="case-pipeline">
+          <span class="case-pipeline-step">Pose Target</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step highlight-step">IK Neural Net</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step">Candidate &theta;</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step secondary-step">FK Validation</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step success-step">Actuate</span>
+        </div>
+      </div>
+      <div class="case-section">
+        <h4>Technical Approach</h4>
+        <ul>
+          <li>Generated large-scale simulation dataset from Gazebo + Simulink covering the full joint workspace</li>
+          <li>Trained a multi-layer feedforward network (PyTorch) with custom loss weighting joint angle accuracy and workspace coverage</li>
+          <li>Introduced a FK validation loop: candidate joint angles are verified by passing through a forward kinematics model before deployment, rejecting invalid solutions</li>
+          <li>Integrated with ROS2 for real-time deployment on the manipulator</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Design Decisions</h4>
+        <ul>
+          <li>Chose a neural approach over optimization-based IK to avoid singularity issues and enable sub-millisecond inference</li>
+          <li>FK validation loop was added after observing that raw network outputs occasionally violated joint limits near workspace boundaries</li>
+          <li>Simulation data generation in Gazebo enabled diverse pose sampling without physical robot wear</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Results</h4>
+        <ul>
+          <li>Solution accepted for oral presentation and publication at IEEE ICMRE 2026 (IEEE Xplore)</li>
+          <li>Novel architecture filed toward NASA New Technology Report (patent process)</li>
+          <li>Demonstrated generalization across the full reachable workspace of the 7-DOF arm with FK validation rejection rate below 5% on the test set</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Failures &amp; Improvements</h4>
+        <ul>
+          <li>Early models failed near singular configurations; resolved by adding targeted training data near those regions</li>
+          <li>Future work: extend to dynamic configurations and integrate with a motion planner for full manipulation pipelines</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Tech Stack</h4>
+        <div class="case-tech-stack">
+          <span>PyTorch</span><span>ROS2</span><span>Gazebo</span><span>Simulink</span><span>Python</span><span>C++</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rover Traversability Case Study -->
+  <div id="case-rover" hidden data-title="Rover Traversability Mapping &mdash; Case Study">
+    <div class="case-study-content">
+      <div class="case-section">
+        <h4>Problem</h4>
+        <p>Enable a physical rover to navigate autonomously through unstructured outdoor terrain by determining in real time which areas are safe to traverse &mdash; without relying on GPS or pre-built maps.</p>
+      </div>
+      <div class="case-section">
+        <h4>Why It Is Hard</h4>
+        <p>Raw LIDAR point clouds encode geometry but not traversability. The pipeline must extract meaningful terrain features (slope, roughness, height discontinuities) fast enough to feed a planner in real time, and the cost function must be tuned so conservative enough to avoid tipping without being so restrictive the rover gets stuck.</p>
+      </div>
+      <div class="case-section">
+        <h4>System Overview</h4>
+        <p>A ROS2 + C++ pipeline processes LIDAR scans into point clouds, estimates local surface normals, extracts terrain features per grid cell, evaluates a cost function, and publishes a cost map consumed by the motion planner &mdash; all in real time on the rover's onboard computer.</p>
+      </div>
+      <div class="case-section">
+        <h4>Architecture &amp; Pipeline</h4>
+        <div class="case-pipeline">
+          <span class="case-pipeline-step">LIDAR Scan</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step">Surface Normals</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step highlight-step">Terrain Features</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step secondary-step">Cost Function</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step success-step">Planner</span>
+        </div>
+      </div>
+      <div class="case-section">
+        <h4>Technical Approach</h4>
+        <ul>
+          <li>Used PCL (Point Cloud Library) in C++ for efficient surface normal estimation from 3D point clouds</li>
+          <li>Discretized the terrain into a 2D grid; computed slope angle, roughness (normal variance), and height discontinuities per cell</li>
+          <li>Designed a cost function that maps feature vectors to scalar traversability scores, with separate weights per feature class</li>
+          <li>Published the resulting cost map on a ROS2 topic consumed by the path planner at the planning frequency</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Design Decisions</h4>
+        <ul>
+          <li>Chose geometric feature extraction over learned traversability models to maintain interpretability and reduce compute on the onboard system</li>
+          <li>Grid resolution was tuned empirically to balance map resolution against update frequency constraints</li>
+          <li>Cost function weights were validated in simulation before hardware deployment</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Results</h4>
+        <ul>
+          <li>Deployed on a physical competition rover with successful autonomous navigation in unstructured outdoor terrain</li>
+          <li>Real-time cost map updates at planning frequency; rover avoided obstacles and steep grades in testing</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Failures &amp; Improvements</h4>
+        <ul>
+          <li>Sparse LIDAR returns in tall grass created false high-cost regions; addressed by height-based outlier filtering</li>
+          <li>Future work: integrate learned traversability estimation to handle semantically difficult terrain (mud, loose gravel)</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Tech Stack</h4>
+        <div class="case-tech-stack">
+          <span>ROS2</span><span>C++</span><span>PCL</span><span>LIDAR</span><span>Linux</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- F1TENTH Case Study -->
+  <div id="case-f1tenth" hidden data-title="F1TENTH Autonomy Stack &mdash; Case Study">
+    <div class="case-study-content">
+      <div class="case-section">
+        <h4>Problem</h4>
+        <p>Build a full perception-to-control autonomy stack on the F1TENTH 1:10 scale car platform that detects obstacles, classifies them, and commands avoidance behaviors in real time &mdash; validating the pipeline on hardware.</p>
+      </div>
+      <div class="case-section">
+        <h4>Why It Is Hard</h4>
+        <p>The F1TENTH platform moves fast relative to its scale, leaving little time between perception and control. The pipeline must handle variable lighting, partial occlusion, and detection latency while remaining within the computational budget of the onboard computer. End-to-end latency from camera to actuator must be low enough that the car responds before reaching the obstacle.</p>
+      </div>
+      <div class="case-section">
+        <h4>System Overview</h4>
+        <p>A ROS2 pipeline integrates stereo camera depth estimation with YOLO-based object detection, fuses 2D detections with depth to get 3D object locations, passes object state to a decision module that selects avoidance or waypoint-following behaviors, and commands the vehicle controller.</p>
+      </div>
+      <div class="case-section">
+        <h4>Architecture &amp; Pipeline</h4>
+        <div class="case-pipeline">
+          <span class="case-pipeline-step">Stereo Camera</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step highlight-step">YOLO Detection</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step">3D Localization</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step secondary-step">Decision Logic</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step success-step">Control</span>
+        </div>
+      </div>
+      <div class="case-section">
+        <h4>Technical Approach</h4>
+        <ul>
+          <li>Ran YOLO on RGB frames for object detection; paired with stereo disparity map to estimate 3D distance to each detected object</li>
+          <li>Decision module evaluated object proximity, classification confidence, and relative velocity to select avoidance, slow-down, or continue behaviors</li>
+          <li>ROS2 node graph structured to minimize latency between perception outputs and control commands</li>
+          <li>Validated closed-loop on the F1TENTH platform in the Georgia Tech Active Safety Lab</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Design Decisions</h4>
+        <ul>
+          <li>Chose YOLO for detection (not a classical CV approach) to handle diverse object classes robustly under lab lighting variation</li>
+          <li>Stereo depth (not LIDAR) was the platform constraint; careful stereo calibration was essential for accurate 3D localization</li>
+          <li>Decision logic kept deliberately simple (threshold-based) to maintain predictability on hardware before complexity was added</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Results</h4>
+        <ul>
+          <li>Validated closed-loop perception-to-control latency under 100 ms on hardware</li>
+          <li>Successful obstacle detection and avoidance in lab environment across multiple test scenarios</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Failures &amp; Improvements</h4>
+        <ul>
+          <li>Stereo depth estimation degraded at close range due to disparity saturation; addressed with near-range fallback detection logic</li>
+          <li>Future work: replace threshold-based decision logic with an MPC layer for smoother, predictive avoidance trajectories</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Tech Stack</h4>
+        <div class="case-tech-stack">
+          <span>ROS2</span><span>YOLO</span><span>OpenCV</span><span>Python</span><span>C++</span><span>Stereo Depth</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Orbital Case Study -->
+  <div id="case-orbital" hidden data-title="Orbital Propagation &amp; Constellation Simulation &mdash; Case Study">
+    <div class="case-study-content">
+      <div class="case-section">
+        <h4>Problem</h4>
+        <p>Build simulation and analysis tools for three distinct spacecraft applications: (1) constellation architecture trade studies at SpaceX, (2) CubeSat debris capture mission planning at Skyfall Space, and (3) orbit navigation software for Georgia Tech's GPDM CubeSat mission.</p>
+      </div>
+      <div class="case-section">
+        <h4>Why It Is Hard</h4>
+        <p>High-fidelity orbital mechanics requires numerical integration of perturbed equations of motion; naive implementations accumulate significant error over time. Constellation trade studies involve a large design space where simulation throughput directly limits the quality of decisions. CubeSat missions with constrained power and propulsion make debris intercept planning a tightly constrained optimization problem.</p>
+      </div>
+      <div class="case-section">
+        <h4>System Overview</h4>
+        <p>Orekit (Java/Python) provides the propagation core; C++ and Python layers handle simulation logic, metric computation, and visualization. Three separate applications built on a shared simulation foundation: constellation trades (SpaceX), debris intercept planning (Skyfall), and mission navigation software (GT SSDL).</p>
+      </div>
+      <div class="case-section">
+        <h4>Architecture &amp; Pipeline</h4>
+        <div class="case-pipeline">
+          <span class="case-pipeline-step">Initial Conditions</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step highlight-step">Orekit Propagation</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step secondary-step">Sim Logic</span>
+          <span class="case-arrow">&rarr;</span>
+          <span class="case-pipeline-step success-step">Analysis &amp; Viz</span>
+        </div>
+      </div>
+      <div class="case-section">
+        <h4>Technical Approach</h4>
+        <ul>
+          <li><strong>SpaceX:</strong> Built C++ + Python simulation pipeline for constellation architecture trades; integrated GNC metrics dashboards with Matplotlib, Pandas, and Bokeh for interactive design-space exploration</li>
+          <li><strong>Skyfall Space:</strong> Developed debris propagation models and CubeSat intercept simulations; modeled capture probability as a function of relative state uncertainty and propulsion constraints</li>
+          <li><strong>GT SSDL:</strong> Built Orekit + Python navigation software for the GPDM mission, implementing orbit propagation, thrust estimation, and mission integration workflows; contributed to cleanroom testing and post-launch ops planning</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Design Decisions</h4>
+        <ul>
+          <li>Orekit chosen over custom propagators for high-fidelity force models (J2, drag, solar pressure) without reinventing the physics core</li>
+          <li>C++ used for computationally intensive simulation loops; Python used for analysis, dashboards, and rapid iteration</li>
+          <li>Bokeh enabled interactive dashboards for constellation trade exploration, allowing engineers to slice across design parameters without re-running simulations</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Results</h4>
+        <ul>
+          <li>Simulation tools deployed in active mission planning workflows at SpaceX and Skyfall Space</li>
+          <li>GT SSDL navigation software integrated into GPDM mission pipeline with cleanroom validation completed</li>
+          <li>Debris propagation models supported Skyfall's NASA funding proposal and mission design review</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Failures &amp; Improvements</h4>
+        <ul>
+          <li>Early Orekit integration had state vector frame-of-reference bugs that produced incorrect thrust estimates; resolved through systematic unit testing against known analytic solutions</li>
+          <li>Future work: extend debris intercept planner with a full trajectory optimization layer using differential dynamic programming</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Tech Stack</h4>
+        <div class="case-tech-stack">
+          <span>Orekit</span><span>Python</span><span>C++</span><span>Pandas</span><span>Matplotlib</span><span>Bokeh</span><span>Java</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TD-MPC Case Study -->
+  <div id="case-tdmpc" hidden data-title="TD-MPC vs PPO vs PID &mdash; Case Study">
+    <div class="case-study-content">
+      <div class="case-section">
+        <h4>Overview</h4>
+        <p>Designed and evaluated multiple control strategies (PID, PPO, TD-MPC) for goal-directed robot navigation across simulation and real-world deployment.</p>
+      </div>
+      <div class="case-section">
+        <h4>Technical Approach</h4>
+        <ul>
+          <li>Implemented and tuned three paradigms: PID baseline, PPO policy learning, and TD-MPC latent-dynamics model predictive control</li>
+          <li>Built curriculum learning progression with increasing task difficulty to improve training stability and convergence</li>
+          <li>Benchmarked across Isaac Lab / MuJoCo simulation and real robot sim-to-real deployment</li>
+          <li>Compared methods on goal-reaching accuracy, trajectory efficiency, and convergence/stability behavior</li>
+          <li>Documented sim-to-real gap sources including dynamics mismatch and unmodeled real-world effects</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Key Findings</h4>
+        <ul>
+          <li>TD-MPC delivered stronger structured behavior and planning efficiency in simulation</li>
+          <li>PPO required heavier tuning and exhibited higher instability</li>
+          <li>PID was reliable for simple tasks but less adaptable as complexity increased</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Tech Stack</h4>
+        <div class="case-tech-stack">
+          <span>Python</span><span>PyTorch</span><span>Isaac Lab</span><span>Isaac Gym</span><span>MuJoCo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Eye Tracker Case Study -->
+  <div id="case-eye-tracker" hidden data-title="Real-Time Driver Attention Monitoring &mdash; Case Study">
+    <div class="case-study-content">
+      <div class="case-section">
+        <h4>Demo Video</h4>
+        <video class="project-video" controls preload="metadata" poster="./wix_images/prog4.jpg">
+          <source src="./Video_Recording_ToSubmit.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="case-section">
+        <h4>System Design</h4>
+        <ul>
+          <li>Implemented face detection, eye region extraction, gaze estimation, and attention classification in a real-time monocular pipeline</li>
+          <li>Used OpenCV classical CV methods (Haar cascades and lightweight heuristics) for low-latency deployment</li>
+          <li>Built threshold-based logic for forward-attention versus off-road gaze states</li>
+          <li>Optimized for responsive inference with low compute overhead</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Limitations</h4>
+        <ul>
+          <li>Lighting sensitivity can degrade gaze signal quality</li>
+          <li>Occlusions and glasses reduce robustness of eye feature extraction</li>
+          <li>Heuristic gaze estimation introduces noise in edge cases</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Tech Stack</h4>
+        <div class="case-tech-stack">
+          <span>Python</span><span>OpenCV</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRACE Case Study -->
+  <div id="case-grace" hidden data-title="GRACE Satellite Data Visualization Dashboard &mdash; Case Study">
+    <div class="case-study-content">
+      <div class="case-section">
+        <h4>Demo Video</h4>
+        <video class="project-video" controls preload="metadata" poster="./wix_images/prog1.jpg">
+          <source src="./GRACEDataApp.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="case-section">
+        <h4>Data + Visualization Pipeline</h4>
+        <ul>
+          <li>Parsed NetCDF datasets and processed spatial + temporal slices for interactive querying</li>
+          <li>Implemented time slider controls, adjustable colormaps/scaling, and map zoom/pan interaction</li>
+          <li>Mapped high-dimensional satellite measurements into interpretable visual layers for rapid analysis</li>
+          <li>Built dynamic parameter controls with responsive rendering updates for exploratory workflows</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Impact + Constraints</h4>
+        <ul>
+          <li>Used by researchers and credited by UT Center for Space Research</li>
+          <li>Performance engineering required to handle large datasets while preserving interactivity</li>
+          <li>Tradeoffs managed between rendering resolution and runtime responsiveness</li>
+        </ul>
+      </div>
+      <div class="case-section">
+        <h4>Tech Stack</h4>
+        <div class="case-tech-stack">
+          <span>Python</span><span>NetCDF</span><span>Visualization Libraries</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
